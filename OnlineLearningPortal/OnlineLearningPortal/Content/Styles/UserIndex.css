@@ -1,0 +1,30 @@
+﻿.userMainContainer {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+.course{
+    padding:12px;
+    background-color:white;
+    width:max-content;
+    border-radius:10px;
+    box-shadow:4px 4px 0px rgba(0,0,0,0.23),
+        -2px 0 3px #f9f9f9,
+        -3px 0 4px #e8e7e7,
+        -5px 0 4px #e8e7e7;
+}
+.course iframe{
+    border-start-start-radius:10px;
+    border-start-end-radius:10px;
+}
+.enrollBtn{
+    border:none;
+    outline:none;
+    padding:8px 18px;
+    border-radius:8px;
+    background-color:blue;
+    color:white;
+}
+.enrollBtn:hover{
+    background-color:blueviolet;
+}

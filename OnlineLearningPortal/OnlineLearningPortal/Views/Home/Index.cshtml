@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+@Styles.Render("~/Content/Styles/login.css")
+<main>
+    <div class="maincontainer">
+        <form class="login-form"  action="~/Home/Index" method="post">
+            <div class="heading-box borderStyle">
+                <h4 style="color:green">Welcome Back</h4>
+                <h4>Login</h4>
+            </div>
+            @{ 
+                if(ViewBag.Message != null)
+                {
+                    <small class="headError">@ViewBag.Message</small>
+                }
+            }
+            
+            <div class="email-box borderStyle display-flex flex-column">
+                <label class="input-label">Email</label>
+                <input class="input-border input" type="email" id="email" name="Email" onblur="EmailValid()"/>
+                <small id="email-msg"></small>
+            </div>
+            <div class="pwd-box borderStyle display-flex flex-column">
+                <label class="input-label">Password</label>
+                <input class="input-border input" type="password" id="pwd" name="Password" onblur="PasswordValid()" />
+                <small id="pwd-msg"></small>
+            </div>
+            <div class="remember-box borderStyle display-flex alignCenter">
+                <div class="remember-box">
+                    <input class="remember-border" type="radio" name="remember" />
+                    <label class="input-label" for="rember">Remember Me</label>
+                </div>
+                <div>
+                    <a href="#" id="forgotPwd">Forgot Password</a>
+                </div>
+            </div>
+            <div class="loginBtn-box">
+                <button  id="loginBtn" disabled >Login</button>
+            </div>
+            <div class="account-box">
+                Don't have an account?
+                <a href="Register" id="signUp">Sign Up</a>
+            </div>
+        </form>
+       
+
+    </div>
+    
+</main>
+@Scripts.Render("~/Scripts/Login.js")

@@ -1,0 +1,30 @@
+﻿.aboutContainer{
+    display:flex;
+    padding:30px;
+    width:100%;
+    justify-content:center;
+    align-items:center;
+}
+.aboutContent{
+    width:40%;
+    padding:10px;
+    
+}
+.aboutContent h2{
+    color:sandybrown;
+    font-size:30px;
+    font-weight:800;
+}
+.aboutContent p{
+    font-size:16px;
+}
+.AboutImageBox{
+     width:40%;
+     padding:10px;
+    
+ }
+.AboutImageBox img {
+     width: 100%;
+     object-fit: cover;
+     border-radius: 10px;
+}

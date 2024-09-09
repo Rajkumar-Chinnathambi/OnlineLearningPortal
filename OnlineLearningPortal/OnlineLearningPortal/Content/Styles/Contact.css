@@ -1,0 +1,57 @@
+﻿.contactContainer {
+    display: flex;
+    padding: 30px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: #e76629;
+}
+.contactAddress {
+    width: 40%;
+    padding: 10px;
+    background-color:#e76629;
+}
+.contactAddress h2{    
+    font-size:30px;
+    font-weight:800;
+}
+.contactAddress p{
+    font-size:16px;
+}
+.contactMap {
+    width: 40%;
+    padding: 10px;
+}
+.ContactFormContainer {
+    background-color: #e76629;
+    display:flex;
+    justify-content:center;
+    padding:30px 0; 
+}
+.ContactFormContainer .contactFormBox{
+    padding:30px;
+    width:500px;
+    background-color:white;
+    border-radius:10px;
+}
+.contactFormBox .flex{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+.flex input{
+    height:30px;
+    padding:4px 15px;
+}
+.flex textarea{
+    height:100px;
+    padding:5px;
+}
+.contactFormBox button {
+    padding: 5px 16px;
+    background-color: green;
+    width:100%;
+    font-size:16px;
+    color:white;
+    margin-top:10px;
+}

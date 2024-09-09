@@ -1,0 +1,45 @@
+﻿@model IEnumerable<OnlineLearningPortal.Models.CourseModel>
+@{
+    ViewBag.Title = "Courses";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+@Styles.Render("~/Content/Styles/Course.css")
+<h2>Courses</h2>
+<table border="2">
+    <tr>
+        <th>Course</th>
+        <th>Course Name</th>
+        <th>Course Catagroy</th>
+        <th>Course Desc</th>
+        <th>Action</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        @* <div class="CourseContainer">
+                <div class="videoFrameBox">
+                    <iframe width="400" height="250" src="@item.Coursesrc"></iframe>
+                </div>
+                <div class="courseDetails">
+                    <h2>@item.Coursename</h2>
+                    <h3>@item.CourseCatagory</h3>
+                    <p>@item.Coursedesc</p>
+                </div>
+            </div>*@
+
+
+        <tr>
+            <td>
+                <iframe width="100" height="50" src="@item.Coursesrc"></iframe>
+            </td>
+            <td>@item.Coursename</td>
+            <td>@item.CourseCatagory</td>
+            <td>@item.Coursedesc</td>
+            <td>
+                <a href="~/Admin/CourseEdit?CourseID=@item.CourseID">Edit</a>
+                <a href="~/Admin/DeleteCourse?CourseID=@item.CourseID">Delete</a>
+            </td>
+        </tr>
+
+    }
+</table>
+

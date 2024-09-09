@@ -1,0 +1,47 @@
+﻿@model IEnumerable<OnlineLearningPortal.Models.CourseModel>
+@{
+    ViewBag.Title = "CourseEdit";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+@Styles.Render("~/Content/Styles/CourseEdit.css")
+
+
+<div>
+    <form action="~/Admin/SaveEditCourse" method="post">
+        <h1>Edit Course</h1>
+        @if (ViewBag.Message != null)
+        {
+            <small>@ViewBag.Message</small>
+        }
+        @foreach (var item in Model)
+        {
+            <input type="number" name="CourseID" value="@item.CourseID" hidden />
+            <div>
+                <label>Course Name</label>
+                <input type="text" id="coursename" name="Coursename" value="@item.Coursename" />
+                <small id="coursenameError"></small>
+            </div>
+            <div>
+                <label>Course Catagory</label>
+                <input type="text" id="coursecatagory" name="CourseCatagory" value="@item.CourseCatagory" />
+                <small id="coursecatagoryError"></small>
+            </div>
+            <div>
+                <label>Course Source</label>
+                <input type="text" id="coursesrc" name="Coursesrc" value="@item.Coursesrc" />
+                <small id="coursesrcError"></small>
+            </div>
+            <div>
+                <label>Course Desc</label>
+                <textarea id="coursedesc" name="Coursedesc">@item.Coursedesc</textarea>
+                <small id="coursedescError"></small>
+            </div>
+        }
+        <button type="submit">Submit</button>
+        <div style="padding:0 5px;">
+            <a href="~/Admin/Courses" class="backBtn">Back</a>
+        </div>
+    </form>
+    
+</div>
+

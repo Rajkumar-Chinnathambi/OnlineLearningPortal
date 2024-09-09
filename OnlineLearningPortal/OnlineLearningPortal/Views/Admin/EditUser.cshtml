@@ -1,0 +1,156 @@
+﻿@model IEnumerable<OnlineLearningPortal.Models.UserModel>
+@{
+    ViewBag.Title = "EditUser";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>EditUser</h2>
+@Styles.Render("~/Content/Styles/Register.css")
+
+<form class="form" action="~/Admin/AllUsers" method="post" id="RegisterForm">
+    <div class="header">
+        <h2 class="heading">Update User</h2>
+    </div>
+    <div class="personal-info">
+        @foreach (var item in Model)
+        {
+            <input type="number" value="@item.Id" name="Id" hidden />
+            <div class="grid">
+
+                <div class="firstNameBox">
+                    <label>First Name</label>
+                    <input type="text" value="@item.FirstName" id="firstName" name="FirstName" onblur="FirstNameValid()" />
+                    <small id="firstNameError" class="error"></small>
+                </div>
+                <div class="lastNameBox">
+                    <label>Last Name</label>
+                    <input type="text" value="@item.LastName" id="lastName" name="LastName" onblur="LastNameValid()" />
+                    <small id="lastNameError" class="error"></small>
+                </div>
+            </div>
+            <div class="grid">
+                <div class="usernameBox">
+                    <label>User Name</label>
+                    <input type="text" value="@item.UserName" id="userName" name="UserName" onblur="UserNameValid()" />
+                    <small id="userNameError" class="error"></small>
+                </div>
+                <div class="pwdBox">
+                    <label>Password</label>
+                    <input type="password" value="@item.Password" id="pwd" name="Password" onblur="PasswordValid()" />
+                    <small id="pwdError" class="error"></small>
+                </div>
+                <div class="date-box">
+                    <label>Date of Birth</label>
+                    <input type="date" value="@item.DOB" max="05-05-2006" id="date" name="DOB" required />
+                    <small class="dateError"></small>
+                </div>
+                <div class="gender-box">
+                    <label>Gender</label>
+                    <select id="state" name="Gender">
+                        <option>Choose Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                    <small id="genderError"></small>
+                </div>
+
+                <div class="emailBox">
+                    <label>Email</label>
+                    <input type="email" value="@item.Email" id="email" name="Email" onblur="EmailValid()" />
+                    <small id="emailError" class="error"></small>
+                </div>
+                <div class="mobileBox">
+                    <label>Mobile</label>
+                    <input type="number" value="@item.PhoneNumber" id="mobile" name="PhoneNumber" onblur="MobileValid()" />
+                    <small id="mobileError" class="error"></small>
+                </div>
+                <div class="address-box grid">
+                    <div class="addressBox">
+                        <label class="">Address</label>
+                        <input type="text" class="" id="address" value="@item.Address" name="Address" onblur="AddressValid()" />
+                        <small id="addressError" class="error"></small>
+                    </div>
+                    <div class="state-box">
+                        <label>State</label>
+                        <select id="state" name="State" value="@item.State">
+                            <option>Choose State</option>
+                            <option>Andhra Pradesh</option>
+                            <option>Arunachal Pradesh</option>
+                            <option>Assam</option>
+                            <option>Bihar</option>
+                            <option>Chhattisgarh</option>
+                            <option>Goa</option>
+                            <option>Gujarat</option>
+                            <option>Haryana</option>
+                            <option>Himachal Pradesh</option>
+                            <option>Jharkhand</option>
+                            <option>Karnataka</option>
+                            <option>Kerala</option>
+                            <option>Madhya Pradesh</option>
+                            <option>Maharashtra</option>
+                            <option>Manipur</option>
+                            <option>Meghalaya</option>
+                            <option>Mizoram</option>
+                            <option>Nagaland</option>
+                            <option>Odisha</option>
+                            <option>Punjab</option>
+                            <option>Rajasthan</option>
+                            <option>Sikkim</option>
+                            <option>Tamil Nadu</option>
+                            <option>Telangana</option>
+                            <option>Tripura</option>
+                            <option>Uttar Pradesh</option>
+                            <option>Uttarakhand</option>
+                            <option>West Bengal</option>
+                        </select>
+                        <small id="stateError"></small>
+                    </div>
+                    <div class="city-box">
+                        <label>City</label>
+                        <select id="city" name="City" value="@item.State">
+                            <option>Choose City</option>
+                            <option>Chennai</option>
+                            <option>Coimbatore</option>
+                            <option>Madurai</option>
+                            <option>Tiruchirappalli</option>
+                            <option>Salem</option>
+                            <option>Tirunelveli</option>
+                            <option>Vellore</option>
+                            <option>Thanjavur</option>
+                            <option>Aruppukottai</option>
+                            <option>Dindigul</option>
+                            <option>Kumbakonam</option>
+                            <option>Kanchipuram</option>
+                            <option>Ramanathapuram</option>
+                            <option>Nagercoil</option>
+                            <option>Tuticorin</option>
+                            <option>Virudhunagar</option>
+                        </select>
+                        <small id="cityError"></small>
+                    </div>
+                    <div class="usertype-box">
+                        <label>User Type</label>
+                        <select id="state" name="UserType" value="@item.UserType">
+                            <option>Choose UserType</option>
+                            <option value="Admin">Admin</option>
+                            <option value="User">User</option>
+                        </select>
+                        <small id="genderError"></small>
+                    </div>
+                </div>
+
+            </div>
+        }
+        </div>
+        
+    <div class="rememberBox">
+        <input type="checkbox" id="remember" />
+        <label for="remember">Remember Me</label>
+    </div>
+    <div class="submit-box">
+        <input type="submit" id="submitBtn" class="submitBtn" value="Create" />
+    </div>
+
+</form>
+
+@Scripts.Render("~/Scripts/EditUser.js")

@@ -1,0 +1,88 @@
+﻿.AllUserTable{
+    width:100%;
+    overflow:hidden;
+}
+
+/* General Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Ensures borders are collapsed into a single border */
+    margin: 20px 0;
+    font-family: Arial, sans-serif; /* Sets a clean font */
+}
+
+/* Table Header Styling */
+th {
+    background-color: #007BFF; /* Background color for header */
+    color: #ffffff; /* Text color for header */
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: bold;
+}
+
+/* Table Cell Styling */
+td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd; /* Light border for rows */
+    vertical-align: top; /* Aligns content to the top of cell */
+}
+
+/* Table Row Hover Effect */
+tr:hover {
+    background-color: #f1f1f1; /* Light background color on hover */
+}
+
+/* Action Links Styling */
+td a {
+    color: #007BFF; /* Blue color for links */
+    text-decoration: none; /* Removes underline from links */
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+td a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Optional: Responsive Table Design */
+@media (max-width: 768px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr {
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 45%;
+        padding-left: 10px;
+        font-weight: bold;
+        white-space: nowrap;
+    }
+}
+
+/* Heading Styling */
+h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+

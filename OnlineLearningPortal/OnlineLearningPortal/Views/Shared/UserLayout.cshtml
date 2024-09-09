@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    @Styles.Render("~/Content/Styles/UserNavbar.css")
+    <style>
+        *{
+            font-family:"Poppins",sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logoBox">
+            <img src="https://s.financesonline.com/uploads/2019/12/claysys-logo1.png" />
+        </div>
+        <ul class="menu">
+            <li><a href="~/Home/HomePage" class="menuItem">Home</a></li>
+            <li><a href="~/Home/About" class="menuItem">About</a></li>
+            <li><a href="~/Home/Contact" class="menuItem">Contact</a></li>
+            <li><a href="~/Home/Index" class="menuItem">Sign In</a></li>
+        </ul>
+    </nav>
+    <div>
+        @RenderBody()
+    </div>
+    <footer>
+        <sectioin class="footerSection">
+            Copyright © 2024, ClaySys Technologies All Rights Reserved.
+        </sectioin>
+    </footer>
+</body>
+</html>

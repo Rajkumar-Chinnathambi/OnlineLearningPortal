@@ -1,0 +1,54 @@
+﻿@{ 
+    var name = Session["Name"];
+    if (name == null) {
+        name = "Guest";
+    }
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    @Styles.Render("~/Content/Styles/AdminLayout.css")
+    <style>
+        * {
+            font-family: "Poppins",sans-serif;
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logoBox">
+            <img src="https://s.financesonline.com/uploads/2019/12/claysys-logo1.png" />
+        </div>
+        <ul class="menu">           
+            <li style="text-transform:uppercase;">@name</li>
+            <li><a href="~/Home/Index" class="menuItem">Sign Out</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="Sidebar">
+            <ul class="sidebarMenu">
+                <li class="sidebarList"><a href="~/Admin/Index" class="sidebarItem">Dasboard</a></li>
+                <li class="sidebarList"><a href="~/Admin/Courses" class="sidebarItem">Courses</a></li>
+                <li class="sidebarList"><a href="~/Admin/AddCourse" class="sidebarItem">Add Course</a></li>
+                <li class="sidebarList"><a href="~/Admin/AllUsers" class="sidebarItem">All Users</a></li>
+                <li class="sidebarList"><a href="~/Admin/CreateUser" class="sidebarItem">Add User</a></li>
+            </ul>
+        </div>
+        <div class="renderContainer">
+            @RenderBody()
+        </div>
+    </main>
+    
+</body>
+</html>

@@ -1,0 +1,81 @@
+﻿
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Ensures borders are collapsed into a single border */
+    margin: 20px 0;
+    font-family: Arial, sans-serif; /* Sets a clean font */
+}
+
+/* Table Header Styling */
+th {
+    background-color: #007BFF; /* Background color for header */
+    color: #ffffff; /* Text color for header */
+    padding: 10px;
+    text-align: left;
+    font-weight: bold;
+}
+
+/* Table Cell Styling */
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd; /* Light border for rows */
+    vertical-align: top; /* Aligns content to the top of cell */
+}
+
+/* Table Row Hover Effect */
+tr:hover {
+    background-color: #f1f1f1; /* Light background color on hover */
+}
+
+/* Action Links Styling */
+td a {
+    color: #007BFF; /* Blue color for links */
+    text-decoration: none; /* Removes underline from links */
+    margin-right: 10px;
+}
+
+td a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Iframe Styling */
+iframe {
+    border: none; /* Removes default border of iframe */
+    border-radius: 4px; /* Optional: adds rounded corners to iframe */
+}
+
+/* Optional: Adjust width and height for responsiveness */
+@media (max-width: 768px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    th {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr {
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 45%;
+        padding-left: 10px;
+        font-weight: bold;
+        white-space: nowrap;
+    }
+}
