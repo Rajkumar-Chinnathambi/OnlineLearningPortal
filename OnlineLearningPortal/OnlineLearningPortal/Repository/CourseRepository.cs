@@ -6,12 +6,14 @@ using System.Linq;
 using System.Web;
 using System.Data;
 using System.Runtime.Remoting.Messaging;
+using System.IO;
+using System.Collections.Generic;
 
 namespace OnlineLearningPortal.Repository
 {
     public class CourseRepository
     {
-        private string connectionString="Data Source=NUVOBOOK_S2\\SQLEXPRESS;database=ClaySys;Integrated Security=SSPI";
+        private string connectionString= "Data Source=SYSLP779\\SQLEXPRESS;database=ClaySys;Integrated Security=SSPI";
         public CourseRepository() { }
         
         public List<CourseModel> GetAllCourses()
@@ -32,7 +34,9 @@ namespace OnlineLearningPortal.Repository
                             CourseCatagory = (string)reader["CourseCatagory"],
                             Coursename = (string)reader["Coursename"],
                             Coursesrc = (string)reader["Coursesrc"],
-                            Coursedesc = (string)reader["Coursedesc"]
+                            Coursedesc = (string)reader["Coursedesc"],
+                            CoursePhoto = (byte[])reader["Courseimage"],
+                            CourseType = (string)reader["CourseType"]
                         });
                     }
                     return list;
@@ -57,6 +61,7 @@ namespace OnlineLearningPortal.Repository
                     cmd.Parameters.AddWithValue("@Coursename", course.Coursename);
                     cmd.Parameters.AddWithValue("@Coursesrc", course.Coursesrc); ;
                     cmd.Parameters.AddWithValue("@Coursedesc", course.Coursedesc);
+                    cmd.Parameters.AddWithValue("@Courseimage", course.CoursePhoto);
                     int result = cmd.ExecuteNonQuery();
                     if (result > 0)
                     {
@@ -89,7 +94,9 @@ namespace OnlineLearningPortal.Repository
                             CourseCatagory = (string)reader["CourseCatagory"],
                             Coursename = (string)reader["Coursename"],
                             Coursesrc = (string)reader["Coursesrc"],
-                            Coursedesc = (string)reader["Coursedesc"]
+                            Coursedesc = (string)reader["Coursedesc"],
+                            CoursePhoto = (byte[])reader["Courseimage"],
+                            CourseType=(string)reader["CourseType"],
                         });
                     }
                     return list;
@@ -291,42 +298,382 @@ namespace OnlineLearningPortal.Repository
                 }
             }
         }
-
+        
         public List<UserModel> GetSingleUser(UserModel usermodel)
         {
-            using (SqlConnection _connection = new SqlConnection("Data Source=NUVOBOOK_S2\\SQLEXPRESS;database=ClaySys;Integrated Security=SSPI"))
+            using (SqlConnection _connection = new SqlConnection("Data Source=SYSLP779\\SQLEXPRESS;database=ClaySys;Integrated Security=SSPI"))
             {
-
-                SqlCommand _command = new SqlCommand("SPR_GetUserById", _connection);
-                _command.CommandType = CommandType.StoredProcedure;
-                _command.Parameters.AddWithValue("@UserId", usermodel.Id);
-                _connection.Open();
-                SqlDataReader _reader = _command.ExecuteReader();
-                List<UserModel> list = new List<UserModel>();
-                while (_reader.Read())
+                try
                 {
-                    list.Add(new UserModel()
+                    SqlCommand _command = new SqlCommand("SPR_GetUserById", _connection);
+                    _command.CommandType = CommandType.StoredProcedure;
+                    _command.Parameters.AddWithValue("@UserId", usermodel.Id);
+                    _connection.Open();
+                    SqlDataReader _reader = _command.ExecuteReader();
+                    List<UserModel> list = new List<UserModel>();
+                    while (_reader.Read())
                     {
-                        Id = (int)_reader["UserId"],
-                        FirstName = (string)_reader["FirstName"],
-                        LastName = (string)_reader["LastName"],
-                        DOB = _reader["DateOfBith"].ToString(),
-                        Gender = (string)_reader["Gender"],
-                        Email = (string)_reader["Email"],
-                        Address = (string)_reader["Address"],
-                        City = (string)_reader["City"],
-                        State = (string)_reader["State"],
-                        UserName = (string)_reader["UserName"],
-                        Password = (string)_reader["Password"],
-                        UserType = (string)_reader["UserType"],
-                        PhoneNumber = _reader["Mobile"].ToString()
-                    });
+                        list.Add(new UserModel()
+                        {
+                            Id = (int)_reader["UserId"],
+                            FirstName = (string)_reader["FirstName"],
+                            LastName = (string)_reader["LastName"],
+                            DOB = _reader["DateOfBith"].ToString(),
+                            Gender = (string)_reader["Gender"],
+                            Email = (string)_reader["Email"],
+                            Address = (string)_reader["Address"],
+                            City = (string)_reader["City"],
+                            State = (string)_reader["State"],
+                            UserName = (string)_reader["UserName"],
+                            Password = (string)_reader["Password"],
+                            UserType = (string)_reader["UserType"],
+                            PhoneNumber = _reader["Mobile"].ToString()
+                        });
+                    }
+                    return list;
                 }
-                return list;
+                catch (Exception ex) {
+                    return null;
+                }
             }
 
             return null;
         }
+        public  UserCourse IsUserCourseEnroll(UserModel usermodel, CourseModel coursemodel)
+        {
+            using (SqlConnection _connection = new SqlConnection("Data Source=SYSLP779\\SQLEXPRESS;database=ClaySys;Integrated Security=SSPI"))
+            {
+                try
+                {
+                    _connection.Open();//SPR_ChecKUserByCourse
+                    SqlCommand _command = new SqlCommand("SPR_ChecKUserByCourse", _connection);
+                    _command.CommandType = CommandType.StoredProcedure;
+                    _command.Parameters.AddWithValue("@UserId", usermodel.Id);
+                    _command.Parameters.AddWithValue("@CourseId", coursemodel.CourseID);
+                    SqlDataReader rd  = _command.ExecuteReader();
+                    while (rd.Read()) { 
+                        var usercourse = new UserCourse()
+                        {
+                            UserId = (int)rd["UserId"],
+                            CourseId = (int)rd["CourseId"],
+                            EnrollStatus = (string)rd["EnrollStatus"]
+                        };
+                        return usercourse;
+                    }
+                    return null;
+                }
+                catch (Exception ex) { return null; }
+            }
+        }
+        public string CourseEnroll(UserModel usermodel,CourseModel coursemodel)
+        {
+            using(SqlConnection _connection = new SqlConnection("Data Source=SYSLP779\\SQLEXPRESS;database=ClaySys;Integrated Security=SSPI"))
+            {
+                try
+                {
+                                     
+                    if (IsUserCourseEnroll(usermodel,coursemodel)==null)
+                    {
+                        _connection.Open();
+                        SqlCommand _cmd = new SqlCommand("SPI_UserCourse", _connection);
+                        _cmd.CommandType = CommandType.StoredProcedure;
+                        _cmd.Parameters.AddWithValue("@UserId", usermodel.Id);
+                        _cmd.Parameters.AddWithValue("@CourseId", coursemodel.CourseID);
+                        _cmd.Parameters.AddWithValue("@EnrollStatus", "Pending");
+                        int result = _cmd.ExecuteNonQuery();
+                        if (result > 0)
+                        {
+                            return "Waiting For Admin Approval";
+                        }
+                        else
+                        {
+                            return "Something errror,try again";
+                        }
+                   
+                    }
+                    return "Waiting For Admin Approval";
+                }
+                catch (Exception ex) { 
+                    return "Something errror,try again"; ;
+                }
+            }
+        }
+        /*public CourseModel GetCourseById(CourseModel coursemodel) {
+            using (SqlConnection _connection = new SqlConnection("Data Source=SYSLP779\\SQLEXPRESS;database=ClaySys;Integrated Security=SSPI"))
+            {
+                try
+                {
+                    _connection.Open();
+                    SqlCommand _command = new SqlCommand("SPR_GetCourseById", _connection);
+                    _command.CommandType = CommandType.StoredProcedure;
+                    _command.Parameters.AddWithValue("@CourseId", coursemodel.CourseID);
+                    SqlDataReader rd = _command.ExecuteReader();
+                    while (rd.Read()) {
+                        return new CourseModel()
+                        {
+                            CourseID = (int)rd["CourseID"],
+                            CourseCatagory = (string)rd["CourseCatagory"],
+                            Coursename = (string)rd["Coursename"],
+                            Coursesrc = (string)rd["Coursesrc"],
+                            Coursedesc = (string)rd["Coursedesc"],
+                            CoursePhoto = (byte[])rd["CoursePhoto"],
+                            CourseType = (string)rd["CourseType"]
+                        };
+                    }
+                    return null;
+                }
+                catch (Exception ex) {
+                    return null;
+                }
+            }
+        }*/
+        public List<CourseModel> GetCourseByUser(UserModel usermodel) {
+            List<CourseModel> list = new List<CourseModel>();
+            using (SqlConnection _connection = new SqlConnection("Data Source=SYSLP779\\SQLEXPRESS;database=ClaySys;Integrated Security=SSPI"))
+            {
+                try
+                {
+                    _connection.Open();
+                    SqlCommand _command = new SqlCommand("SPR_GetCourseByUser", _connection);
+                    _command.CommandType = CommandType.StoredProcedure;
+                    _command.Parameters.AddWithValue("@UserId", usermodel.Id);
+                    SqlDataReader reader = _command.ExecuteReader();
+                    while (reader.Read()) {
+                        list.Add(new CourseModel()
+                        {
+                            CourseID = (int)reader["CourseID"],
+                            Coursename = (string)reader["Coursename"],
+                            Coursedesc = (string)reader["Coursedesc"],
+                            CoursePhoto = (byte[])reader["Courseimage"],
+                            Enroll = (string)reader["Enroll"]
+                        });
+                    }
+                    return list;
+                }
+                catch (Exception ex)
+                {
+                    return list;
+                }
+            }
+            return list;
+        }
+        public List<CourseModel> UnEnrollCourse(UserModel usermodel)
+        {
+            List<CourseModel> list = new List<CourseModel>();
+            using (SqlConnection _connection = new SqlConnection("Data Source=SYSLP779\\SQLEXPRESS;database=ClaySys;Integrated Security=SSPI"))
+            {
+                try
+                {
+                    _connection.Open();
+                    SqlCommand _command = new SqlCommand("SPR_UnEnrollCourse", _connection);
+                    _command.CommandType = CommandType.StoredProcedure;
+                    _command.Parameters.AddWithValue("@UserId", usermodel.Id);
+                    SqlDataReader reader = _command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        list.Add(new CourseModel()
+                        {
+                            CourseID = (int)reader["CourseID"],
+                            CourseCatagory = (string)reader["CourseCatagory"],
+                            Coursename = (string)reader["Coursename"],
+                            Coursesrc = (string)reader["Coursesrc"],
+                            Coursedesc = (string)reader["Coursedesc"],
+                            CoursePhoto = (byte[])reader["Courseimage"],
+                            Enroll = "Enroll"
+                        });
+                    }
+                }
+                catch (Exception ex)
+                {
+                    return list;
+                }
+            }
+            return list;
+        }
+        public string DeleteCourse(CourseModel coursemodel,UserModel usermodel) {
+            using (SqlConnection _connection = new SqlConnection("Data Source=SYSLP779\\SQLEXPRESS;database=ClaySys;Integrated Security=SSPI"))
+            {
+                try
+                {
+                    _connection.Open();
+                    SqlCommand _command = new SqlCommand("SPD_UserCourse", _connection);
+                    _command.CommandType = CommandType.StoredProcedure;
+                    _command.Parameters.AddWithValue("@CourseId", coursemodel.CourseID);
+                    _command.Parameters.AddWithValue("@UserId", usermodel.Id);
+                    int result = _command.ExecuteNonQuery();
+                    if (result > 0)
+                    {
+                        return "Successfully Deleted";
+                    }
+                    else {
+                        return "Something error, try after some time";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    return "Something error, try again";
+                }
+            }
+        }
+        public string VideoSave(VideoModel videomodel)
+        {
+            using (SqlConnection _connection = new SqlConnection("Data Source=SYSLP779\\SQLEXPRESS;database=ClaySys;Integrated Security=SSPI"))
+            {
+                try
+                {
+                    _connection.Open();
+                    SqlCommand _command = new SqlCommand("SPI_Video", _connection);
+                    _command.CommandType = CommandType.StoredProcedure;
+                    _command.Parameters.AddWithValue("@videoName", videomodel.videoName);                   
+                    _command.Parameters.AddWithValue("@videoData", SqlDbType.VarBinary).Value = videomodel.videoPath;
+                    _command.Parameters.AddWithValue("@fileExt", SqlDbType.VarChar).Value = "mp4";
+                    int result = _command.ExecuteNonQuery();
+                    if (result > 0)
+                    {
+                        return "Successfully Deleted";
+                    }
+                    else
+                    {
+                        return "Something error, try after some time";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    return "Something error, try again";
+                }
+            }
+        }
+        public List<VideoModel> GetAllVideos()
+        {
+            List<VideoModel> list = new List<VideoModel>();
+            using (SqlConnection _connection = new SqlConnection("Data Source=SYSLP779\\SQLEXPRESS;database=ClaySys;Integrated Security=SSPI"))
+            {
+                try
+                {
+                    _connection.Open();
+                    SqlCommand _command = new SqlCommand("SPR_GetAllVideo", _connection);
+                    _command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = _command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        list.Add(new VideoModel()
+                        {
+                            videoId = (int)reader["videoId"],
+                            videoName = (string)reader["videoName"],
+                            videoPath = (byte[])reader["videoData"]
+                        });
+                    }
+                }
+                catch (Exception ex)
+                {
+                    return list;
+                }
+            }
+            return list;
+        }
 
+        public List<PendingCourse> GetPendingApprovalCourse()
+        {
+            using (SqlConnection _connection = new SqlConnection("Data Source=SYSLP779\\SQLEXPRESS;database=ClaySys;Integrated Security=SSPI"))
+            {
+                try
+                {
+                    List<PendingCourse> list = new List<PendingCourse>();
+                    _connection.Open();
+                    SqlCommand _command = new SqlCommand("GetPendingApprovalCourse", _connection);
+                    _command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = _command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        list.Add(new PendingCourse()
+                        {
+                            Id = (int)reader["Id"],
+                            UserId = (int)reader["UserId"],
+                            CourseId = (int)reader["CourseId"],
+                            UserName= (string)reader["UserName"],
+                            CourseName = (string)reader["CourseName"]
+                        });
+                    }
+                    return list;
+                }
+                catch (Exception ex)
+                {
+                    return null;
+                }
+            }
+            return null;
+        }
+        public bool CourseAcceptOrReject(int id, int status)
+        {
+
+            using (SqlConnection _connection = new SqlConnection("Data Source=SYSLP779\\SQLEXPRESS;database=ClaySys;Integrated Security=SSPI"))
+            {
+                try
+                {
+                    _connection.Open();
+                    SqlCommand _command = new SqlCommand("UpdateApprovalCourse", _connection);
+                    _command.CommandType = CommandType.StoredProcedure;
+                    _command.Parameters.AddWithValue("@id", id);
+                    if (status == 1)
+                    {
+                        _command.Parameters.AddWithValue("@EnrollStatus", "Approved");
+                    }
+                    else
+                    {
+                        _command.Parameters.AddWithValue("@EnrollStatus", "Reject");
+                    }
+                    int result = _command.ExecuteNonQuery();
+                    if (result > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    return false;
+                }
+            }
+        }
+        public List<Quize> GetAllQuize(CourseModel course)
+        {
+            List<Quize> list = new List<Quize>();
+            using (SqlConnection _connection = new SqlConnection("Data Source=SYSLP779\\SQLEXPRESS;database=ClaySys;Integrated Security=SSPI"))
+            {
+                try
+                {
+                    _connection.Open();
+                    SqlCommand _command = new SqlCommand("SPR_QuizeByCourseId", _connection);
+                    _command.CommandType = CommandType.StoredProcedure;
+                    _command.Parameters.AddWithValue("@courseID", course.CourseID);
+                    SqlDataReader reader = _command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        list.Add(new Quize()
+                        {
+                            quizeId = (int)reader["quizeId"],
+                            courseID = (int)reader["courseID"],
+                            quize = (string)reader["quize"],
+                            option1 = (string)reader["option1"],
+                            option2 = (string)reader["option2"],
+                            option3 = (string)reader["option3"],
+                            option4 = (string)reader["option4"],
+                            answer = (string)reader["answer"]
+                        });
+                    }
+                    return list;
+
+                }
+                catch (Exception ex)
+                {
+                    return null;
+                }
+            }
+
+        }
     }
 }

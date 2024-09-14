@@ -1,0 +1,89 @@
+﻿@model IEnumerable<OnlineLearningPortal.Models.Quize>
+@{
+    ViewBag.Title = "QuizeView";
+    Layout = "~/Views/Shared/LogUserLayout.cshtml";
+    
+}
+@Styles.Render("~/Content/Styles/QuizeView.css")
+
+<div class="quizeContainer">
+    <div class="quizeBox">
+        <h2>QuizeView</h2>
+        @{
+            int i = 0;
+        }
+        @foreach (var item in Model)
+        {
+            <div class="singleQuize">
+                <p class="question">@item.quize</p>
+                <ul class="questions">
+                    <li>
+                        <input type="radio" value="@item.option1" name="selectAnswer1" />
+                        <label>@item.option1</label>
+                    </li>
+                    <li>
+                        <input type="radio" value="@item.option2" name="selectAnswer1" />
+                        <label>@item.option2</label>
+                    </li>
+                    <li>
+                        <input type="radio" value="@item.option3" name="selectAnswer1" />
+                        <label>@item.option3</label>
+                    </li>
+                    <li>
+                        <input type="radio" value="@item.option4" name="selectAnswer1" />
+                        <label>@item.option4</label>
+                    </li>
+                    <li id="answer" style="display:none">@item.answer</li>
+
+                </ul>
+
+            </div>
+            <div class="singleQuize">
+                <p class="question">@item.quize</p>
+                <ul class="questions">
+                    <li>
+                        <input type="radio" value="@item.option1" />
+                        <label>@item.option1</label>
+                    </li>
+                    <li>
+                        <input type="radio" value="@item.option2" />
+                        <label>@item.option2</label>
+                    </li>
+                    <li>
+                        <input type="radio" value="@item.option3" />
+                        <label>@item.option3</label>
+                    </li>
+                    <li>
+                        <input type="radio" value="@item.option4" />
+                        <label>@item.option4</label>
+                    </li>
+                    <li id="answer" style="display:none">@item.answer</li>
+
+                </ul>
+
+            </div>
+            <button class="answerSubmitBtn" onclick="CheckAnswer()">Submit</button>
+        }
+        <script>
+            const ul = document.querySelectorAll(".questions")
+            function CheckAnswer() {
+                let score = 0
+                ul.forEach(ul => {
+                    let inputs = ul.querySelectorAll('input')
+                    inputs.forEach(input => {
+                        if (input.checked) {
+                            let answer = ul.querySelector("#answer").innerHTML;
+                            if (input.value == answer) {
+                                score += 1;
+                            }
+                        }
+                    })
+
+
+                })
+                document.querySelector(".answerSubmitBtn").innerHTML = "Try Again";
+                console.log(score)
+            }
+        </script>
+    </div>
+</div>

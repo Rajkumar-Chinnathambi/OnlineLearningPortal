@@ -12,5 +12,13 @@ namespace OnlineLearningPortal.Models
         public string Coursename { get; set; }
         public string Coursesrc { get; set; }
         public string Coursedesc { get; set; }
+        public byte[] CoursePhoto { get; set; }
+        public string CourseType { get; set; }
+        public string Enroll { get; set; } = "Enroll";
+
+        public CourseModel()
+        {
+            
+        }
     }
 }

@@ -11,9 +11,9 @@
                 <h4>Login</h4>
             </div>
             @{ 
-                if(ViewBag.Message != null)
+                if(TempData["LoginResult"] != null)
                 {
-                    <small class="headError">@ViewBag.Message</small>
+                    <small class="headError">@TempData["LoginResult"]</small>
                 }
             }
             

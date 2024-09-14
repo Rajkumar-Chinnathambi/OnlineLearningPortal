@@ -6,33 +6,38 @@
 
 @Styles.Render("~/Content/Styles/AddCourse.css")
 <div>
-    <form action="~/Admin/AddCourse" method="post">
+    <form action="~/Admin/AddCourse" method="post" enctype="multipart/form-data">
         <h1>Add Course</h1>
-        @if(ViewBag.Message != null)
-            {
-                <small>@ViewBag.Message</small>
-            }
-        <div class="inputGroup" >
+        @if (ViewBag.Message != null)
+        {
+            <small>@ViewBag.Message</small>
+        }
+        <div class="inputGroup">
             <label>Course Name</label><br />
-            <input type="text" id="coursename" name="Coursename" />
+            <input type="text" id="coursename" name="Coursename" onblur="CourseNameValid()" />
             <small id="coursenameError"></small>
         </div>
         <div class="inputGroup">
             <label>Course Catagory</label><br />
-            <input type="text" id="coursecatagory" name="CourseCatagory" />
+            <input type="text" id="coursecatagory" name="CourseCatagory" onblur="CourseCatagoryValid()" />
             <small id="coursecatagoryError"></small>
         </div>
         <div class="inputGroup">
             <label>Course Source</label><br />
-            <input type="text" id="coursesrc" name="Coursesrc" />
+            <input type="text" id="coursesrc" name="Coursesrc" onblur="CoursesrcValid()" />
             <small id="coursesrcError"></small>
         </div>
         <div class="inputGroup">
             <label>Course Desc</label><br />
-            <textarea id="coursedesc" name="Coursedesc"></textarea>
+            <textarea id="coursedesc" name="Coursedesc" onabort="CoursedescValid()"></textarea>
+            <small id="coursedescError"></small>
+        </div>
+        <div class="inputGroup">
+            <label>Course Desc</label><br />
+            <input type="file" name="Courseimage" />
             <small id="coursedescError"></small>
         </div>
         <button type="submit">Submit</button>
     </form>
 </div>
-
+@Scripts.Render("~/Scripts/Script/AddCourse.js")

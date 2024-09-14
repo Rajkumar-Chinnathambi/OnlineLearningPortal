@@ -1,23 +1,35 @@
-﻿
+﻿@model IEnumerable<OnlineLearningPortal.Models.CourseModel>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/LogUserLayout.cshtml";
 }
 @Styles.Render("~/Content/Styles/UserIndex.css")
 <div class="userMainContainer">
-    <h2>UserIndex</h2>
-    <div class="courseContainer">
-        <div class="course">
-            <iframe src=" " width="250" height="200"></iframe>
-            <div class="courseContent">
-                <h3>Course Title : Java</h3>
-                <h4>Course Catagory : Back End</h4>
-                <p>Description :</p>
-                <p>lorem Content</p>
-                <button class="enrollBtn">Enroll</button>
+  
+
+   
+    
+<div class="courseContainer">
+    @foreach (var item in Model)
+    {
+        <a href="~/User/VideoPlayView?courseid=@item.CourseID" class="Couserlink">
+            <div class="course">
+                @{
+                    var image64 = Convert.ToBase64String(item.CoursePhoto);
+                    var src = string.Format("data:image/gif;base64,{0}", image64);
+                }
+                <img src="@src" width="250" height="200" />
+                @*<iframe src="@item.Coursesrc " width="250" height="200"></iframe>*@
+                <div class="courseContent" style="margin-bottom:20px">
+                    <h3> @item.Coursename</h3>
+                    <h4>@item.CourseCatagory</h4>
+
+                </div>
+                <p style="margin-top:auto">Course</p>
             </div>
-        </div>
-    </div>
+        </a>
+    }
+</div>
 
 </div>
 

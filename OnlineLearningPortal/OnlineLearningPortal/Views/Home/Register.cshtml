@@ -1,7 +1,7 @@
 ﻿
 @{
     ViewBag.Title = "Register";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
 }
 @Styles.Render("~/Content/Styles/Register.css")
 <div class="mainContainer">
@@ -36,7 +36,7 @@
                 </div>
                 <div class="date-box">
                     <label>Date of Birth</label>
-                    <input type="date" value="" max="05-05-2006" id="date" name="DOB" required />
+                    <input type="date" value="" max="2006-05-05" id="date" name="DOB" required />
                     <small class="dateError"></small>
                 </div>
                 <div class="gender-box">

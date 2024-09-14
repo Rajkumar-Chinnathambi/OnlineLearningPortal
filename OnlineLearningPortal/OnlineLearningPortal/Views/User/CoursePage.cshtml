@@ -1,0 +1,52 @@
+﻿@model IEnumerable<OnlineLearningPortal.Models.CourseModel>
+
+@{
+    ViewBag.Title = "CoursePage";
+    Layout = "~/Views/Shared/LogUserLayout.cshtml";
+}
+@Styles.Render("~/Content/Styles/CoursePage.css")
+
+
+<div class="coursePageContainer">
+    
+    @foreach (var item in Model)
+    {
+             <div class="courseContentContainer">
+                <div class="courseVideoBox">
+                    <iframe src="@item.Coursesrc" allowfullscreen></iframe>
+                </div>   
+                <div class="courseDetails">
+                    <h3 class="courseTitle">@item.Coursename</h3>
+                    <div class="descBox">
+                        <p class="descTitle">Description :</p>
+                        <p style="text-indent:25px;">@item.Coursedesc</p>
+                    </div>
+                </div>
+                <div class="quizeBtnBox">
+                    <p>Start the Quize</p>
+                    <p>Good luck!</p>
+                    <a href="~/User/QuizeView?courseid=@item.CourseID">Start the @item.Coursename</a>
+                </div>
+                <div class="reviewBox">
+                    <h2 style="padding-left:15px;">Comments</h2>
+                    <div class="review">
+                        <img src="https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w1200/2023/10/free-images.jpg" />
+                        <input class="commentInput" type="text" placeholder="Place your comment" />
+                        <button class="sendBtn">></button>
+                    </div>
+                    @for (int i = 1; i <= 10; i++)
+                    {
+                        <div class="review">
+                            <img src="https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w1200/2023/10/free-images.jpg" />
+                            <p>
+                               I'm a little early, but thank you for 1,000,000 subscribers everybody!
+                                I would not be able to continue if it weren't for your support.
+                                I appreciate you.
+                            </p>
+                        </div>
+                    }
+                </div>
+            </div>
+    }
+</div>
+

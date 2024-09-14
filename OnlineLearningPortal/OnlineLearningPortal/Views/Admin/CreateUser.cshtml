@@ -11,6 +11,10 @@
         <div class="header">
             <h2 class="heading">Create User</h2>
         </div>
+        @if (TempData["Message"] != null) { 
+            <small>@TempData["Message"]</small>
+        }
+
         <div class="personal-info">
             <div class="grid">
                 <div class="firstNameBox">
@@ -37,7 +41,7 @@
                 </div>
                 <div class="date-box">
                     <label>Date of Birth</label>
-                    <input type="date" value="" max="05-05-2006" id="date" name="DOB" required />
+                    <input type="date" value="" max="2006-05-05" id="date" name="DOB" required />
                     <small class="dateError"></small>
                 </div>
                 <div class="gender-box">
@@ -128,8 +132,8 @@
                         <label>User Type</label>
                         <select id="state" name="UserType">
                             <option>Choose Gender</option>
-                            <option value="Male">Admin</option>
-                            <option value="Female">User</option>
+                            <option value="Admin">Admin</option>
+                            <option value="User">User</option>
                         </select>
                         <small id="genderError"></small>
                     </div>

@@ -1,0 +1,32 @@
+﻿@model IEnumerable<OnlineLearningPortal.Models.CourseModel>
+@{
+    ViewBag.Title = "PaidCourseView";
+    Layout = "~/Views/Shared/LogUserLayout.cshtml";
+}
+@Styles.Render("~/Content/Styles/PaidCourseView.css")
+<div class="paidCourseContainer">
+    @foreach (var item in Model)
+    {
+
+        <div class="courseImageBox">
+            @{
+                var image64 = Convert.ToBase64String(item.CoursePhoto);
+                var src = string.Format("data:image/gif;base64,{0}", image64);
+            }
+            <img src="@src" class="courseImage" />
+        </div>
+        <div class="contentBox">
+            <div class="courseTitle">
+                <h1>Learn   @item.Coursename </h1>
+            </div>
+            <p class="coursePrice">$100.00</p>
+            <p class="courseDesc">@item.Coursedesc Learn Java, a powerful programming language that runs on billions of devices worldwide. Java is essential for anyone interested in developing android apps, web applications, and software</p>
+            <div class="ratingBox">
+            
+            </div>
+            <div class="buyBtnBox">
+                <a href="#" class="buyBtn">Buy</a>
+            </div>
+        </div>
+    }
+</div>

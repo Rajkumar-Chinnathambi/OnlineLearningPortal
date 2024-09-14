@@ -1,6 +1,7 @@
 ﻿.AllUserTable{
     width:100%;
     overflow:hidden;
+    padding:0;
 }
 
 /* General Table Styling */
@@ -43,7 +44,22 @@ td a {
 td a:hover {
     text-decoration: underline; /* Underline on hover */
 }
+.titleHeader{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding-right:10px;
 
+}
+.addUserBtn{
+    flex-grow:0;
+    padding:10px 18px;
+    background-color:green;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+    align-items:center;
+}
 /* Optional: Responsive Table Design */
 @media (max-width: 768px) {
     table, thead, tbody, th, td, tr {

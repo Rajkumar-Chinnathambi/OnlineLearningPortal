@@ -75,14 +75,16 @@ footer {
 .Sidebar {
     width: 240Px;
     min-width:240px;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #e3d3d3;
     margin-top:5px;
     padding-top:30px;
+    
 }
 .sidebarMenu{
     width:calc(100% -20px);
     padding:10px;
+    
 }
 .sidebarList{
     padding:10px 0 ;

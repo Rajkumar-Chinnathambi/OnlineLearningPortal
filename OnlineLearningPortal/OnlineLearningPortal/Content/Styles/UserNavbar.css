@@ -52,7 +52,7 @@
     background-color:#b9acac;
 }
 footer{
-    width:100vw;
+    max-width:95vw;
 }
 .footerSection{
     padding:20px;

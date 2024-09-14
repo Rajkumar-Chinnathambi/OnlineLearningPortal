@@ -4,21 +4,18 @@
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 @Styles.Render("~/Content/Styles/AllUsers.css")
-<h2>AllUsers</h2>
-<div class="AllUserTable" style="width:calc(100vw - 260px);overflow-x:auto;">
+<div class="titleHeader">
+    <h2>AllUsers</h2>
+    <a href="~/Admin/CreateUser" class="addUserBtn">Add User</a>
+</div>
+<div class="AllUserTable" style="width:calc(100vw - 280px);overflow-x:auto;">
 <table border="2">
     <tr>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>DOB</th>
-        <th>Gender</th>
-        <th>Address</th>
-        <th>City</th>
-        <th>State</th>
-        <th>Email</th>
-        <th>User Name</th>
-        <th>Password</th>
+        <th>First Name</th>        
+        <th>User Name</th>        
+        <th>Email</th>        
         <th>Mobile</th>
+        <th>State</th>
         <th>User Type</th>
         <th>Action</th>
     </tr>
@@ -26,18 +23,13 @@
     {
         <tr>
             <td>@item.FirstName</td>
-            <td>@item.LastName</td>
-            <td>@item.DOB</td>
-            <td>@item.Gender</td>
-            <td>@item.Address</td>
-            <td>@item.City</td>
-            <td>@item.State</td>
-            <td>@item.Email</td>
             <td>@item.UserName</td>
-            <td>@item.Password</td>
+            <td>@item.Email</td>           
             <td>@item.PhoneNumber</td>
+            <td>@item.State</td>
             <td>@item.UserType</td>
             <td>
+                <a href="~/Admin/EditUser?Id=@item.Id">View Details</a>
                 <a href="~/Admin/EditUser?Id=@item.Id">Edite</a>
                 <a href="~/Admin/DeleteUser?Id=@item.Id">Delete</a>
             </td>

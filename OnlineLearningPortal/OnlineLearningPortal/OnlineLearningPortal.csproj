@@ -127,7 +127,11 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CourseModel.cs" />
+    <Compile Include="Models\PendingCourse.cs" />
+    <Compile Include="Models\Quize.cs" />
+    <Compile Include="Models\UserCourse.cs" />
     <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Models\VideoModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\CourseRepository.cs" />
     <Compile Include="Repository\HomeRepository.cs" />
@@ -156,12 +160,17 @@
     <Content Include="Content\Styles\Contact.css" />
     <Content Include="Content\Styles\Course.css" />
     <Content Include="Content\Styles\CourseEdit.css" />
+    <Content Include="Content\Styles\CoursePage.css" />
     <Content Include="Content\Styles\HomePage.css" />
     <Content Include="Content\Styles\login.css" />
     <Content Include="Content\Styles\LogUserNavbar.css" />
+    <Content Include="Content\Styles\MyCourse.css" />
+    <Content Include="Content\Styles\PaidCourseView.css" />
+    <Content Include="Content\Styles\QuizeView.css" />
     <Content Include="Content\Styles\Register.css" />
     <Content Include="Content\Styles\UserIndex.css" />
     <Content Include="Content\Styles\UserNavbar.css" />
+    <Content Include="Content\Styles\VideoPlayView.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -187,6 +196,7 @@
     <Content Include="Scripts\Login.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\Register.js" />
+    <Content Include="Scripts\Script\AddCourse.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -214,6 +224,13 @@
     <Content Include="Views\Admin\CreateUser.cshtml" />
     <Content Include="Views\Admin\EditUser.cshtml" />
     <Content Include="Views\Shared\LogUserLayout.cshtml" />
+    <Content Include="Views\User\MyCourse.cshtml" />
+    <Content Include="Views\User\VideoPlayView.cshtml" />
+    <Content Include="Views\User\videoGetView.cshtml" />
+    <Content Include="Views\Admin\CourseApproval.cshtml" />
+    <Content Include="Views\User\CoursePage.cshtml" />
+    <Content Include="Views\User\PaidCourseView.cshtml" />
+    <Content Include="Views\User\QuizeView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

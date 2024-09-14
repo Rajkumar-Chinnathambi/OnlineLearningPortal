@@ -1,0 +1,55 @@
+﻿@model IEnumerable<OnlineLearningPortal.Models.CourseModel>
+@{
+    ViewBag.Title = "MyCourse";
+    Layout = "~/Views/Shared/LogUserLayout.cshtml";
+    if (TempData["Message"] != null) { 
+        <script>alert("@TempData["Message"]")</script>
+    }
+}
+@Styles.Render("~/Content/Styles/MyCourse.css")
+
+<div class="MyCourseContainer">
+    @if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+            <div  class="course">
+                <div class="courseBox" >
+                    @{
+                        var imgbase64 = Convert.ToBase64String(item.CoursePhoto);
+                        var src = string.Format("data:image/gif;base64,{0}", imgbase64);
+                     }
+                    <img src="@src" width="250" height="150" onclick="" />
+                    
+                    <div class="courseContent">
+                        <h3>@item.Coursename</h3>
+                        <p>Description :</p>
+                        <p class="courseDesc">@item.Coursedesc</p>
+                        <div class="btnBox">
+                            @{
+                                if (item.Enroll == "Pending")
+                                {
+                                    <a href="#" style="background-color:gray;color:white;cursor:not-allowed">Waiting for admin approve</a>
+                                }
+                                else if (item.Enroll == "Reject")
+                                {
+                                    <a href="#" style="background-color:gray;color:white;cursor:not-allowed" class="playBtn">Rejected</a>
+                                }
+                                else { 
+
+                                    <a href="~/User/CoursePage?courseid=@item.CourseID" class="playBtn">Go to course</a>
+                                }
+
+                            }
+                            <a href="~/User/DeleteMyCourse?courseid=@item.CourseID" class="deleteBtn">Delete</a>
+                        </div>
+                    </div>
+                </div>
+             </div>
+        }
+    }
+    else
+    {
+        <div>Empty</div>
+    }
+</div>

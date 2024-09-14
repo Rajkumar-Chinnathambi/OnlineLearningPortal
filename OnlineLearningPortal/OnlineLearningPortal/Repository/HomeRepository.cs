@@ -22,7 +22,7 @@ namespace OnlineLearningPortal.Repository
         }
         public List<UserModel> UserValid(UserModel usermodel)
         {
-            using(SqlConnection _connection= new SqlConnection("Data Source=NUVOBOOK_S2\\SQLEXPRESS;database=ClaySys;Integrated Security=SSPI"))
+            using(SqlConnection _connection= new SqlConnection("Data Source=SYSLP779\\SQLEXPRESS;database=ClaySys;Integrated Security=SSPI"))
             {
                 
                 _command = new SqlCommand("SPR_SingleUser", _connection);
@@ -58,7 +58,7 @@ namespace OnlineLearningPortal.Repository
         }
 
         public bool RegisterValid(UserModel usermodel) {
-            using (SqlConnection _connection = new SqlConnection("Data Source=NUVOBOOK_S2\\SQLEXPRESS;database=ClaySys;Integrated Security=SSPI"))
+            using (SqlConnection _connection = new SqlConnection("Data Source=SYSLP779\\SQLEXPRESS;database=ClaySys;Integrated Security=SSPI"))
                 try
                 {
                     var list = new List<UserModel>();

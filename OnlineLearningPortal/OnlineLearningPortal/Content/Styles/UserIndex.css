@@ -3,19 +3,27 @@
     margin: 0 auto;
     padding: 20px;
 }
-.course{
-    padding:12px;
-    background-color:white;
-    width:max-content;
-    border-radius:10px;
-    box-shadow:4px 4px 0px rgba(0,0,0,0.23),
-        -2px 0 3px #f9f9f9,
-        -3px 0 4px #e8e7e7,
-        -5px 0 4px #e8e7e7;
+.courseContainer {
+    display: flex;
+    gap: 25px;
+}
+.course {
+    width: 280px;
+    overflow: hidden;
+    padding: 12px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 4px 4px 0px rgba(0,0,0,0.23), -2px 0 3px #f9f9f9, -3px 0 4px #e8e7e7, -5px 0 4px #e8e7e7;
 }
 .course iframe{
     border-start-start-radius:10px;
     border-start-end-radius:10px;
+}
+.courseDesc {
+    width: 100%;
+    text-wrap: nowrap;
+    overflow: hidden;
+    margin-bottom:10px;
 }
 .enrollBtn{
     border:none;
@@ -27,4 +35,8 @@
 }
 .enrollBtn:hover{
     background-color:blueviolet;
+}
+.Couserlink{
+    color:black;
+    text-decoration:none;
 }

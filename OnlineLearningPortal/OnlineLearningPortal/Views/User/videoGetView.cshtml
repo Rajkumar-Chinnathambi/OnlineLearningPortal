@@ -1,0 +1,45 @@
+﻿@model IEnumerable<OnlineLearningPortal.Models.VideoModel>
+
+@{
+    ViewBag.Title = "videoGetView";
+    Layout = "~/Views/Shared/LogUserLayout.cshtml";
+}
+
+<h2>videoGetView</h2>
+<form action="~/User/VideoGetView" method="post" enctype="multipart/form-data">
+    @{
+        if (TempData["VideoResult"] != null)
+        {
+            <small>@TempData["VideoResult"]</small>
+        }
+    }
+    <div style="display:flex;gap:8px">
+        <label>File Name</label>
+        <input type="text" name="videoName" />
+    </div>
+    <div style="display:flex;gap:8px">
+        <label>File</label>
+        <input type="file" name="videoPath" />
+    </div>
+    <input type="submit" value="Submit" />
+</form>
+<div style="display:flex;gap:10px;flex-wrap:wrap;">
+    @{
+        foreach (var item in Model)
+        {
+        <div>
+            <h2>@item.videoName</h2>
+            <video controls width="200" height="300">
+                @{
+                    var base64 = Convert.ToBase64String(item.videoPath);
+                    var src = string.Format("data:video/mp4;base64,{0}", base64);
+                }
+                <source src="@src" type="video/mp4" />
+            </video>
+        </div>
+        }
+
+    }
+</div>
+
+

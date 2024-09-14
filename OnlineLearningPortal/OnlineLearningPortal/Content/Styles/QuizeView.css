@@ -1,0 +1,40 @@
+﻿.quizeContainer
+{
+    width:98vw;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+.quizeBox{
+    width:70%;
+    padding-top:15px;
+}
+.singleQuize {
+    width: 100%;
+    padding:20px 0;
+}
+.question{
+    font-size:20px;
+    padding:10px 0;
+}
+.questions{
+    list-style:none;
+    padding :0 10px;
+}
+.questions li{
+    display:flex;
+    column-gap:10px;
+    margin-bottom:10px;
+}
+.questions li label{
+    font-size:18px;
+}
+.answerSubmitBtn{
+    padding:8px 18px;
+    background-color:green;
+    color:white;
+    font-size:18px;
+    border-radius:5px;
+}
+

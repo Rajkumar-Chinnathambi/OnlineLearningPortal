@@ -27,6 +27,7 @@ namespace OnlineLearningPortal.Controllers
             {
                 foreach (var item in userType) {
                     Session["Name"] = item.UserName;
+                    Session["UserId"] = item.Id;
                     if (item.UserType == "Admin")
                     {
                         return Redirect("~/Admin/Index");
@@ -36,11 +37,12 @@ namespace OnlineLearningPortal.Controllers
                         return Redirect("~/User/Index");
                     }
                 }
+                TempData["LoginResult"] = "Invalid UserName and Password";
                 return View();
             }
             else
             {
-                ViewBag.Message = "Invalid UserName and Password";
+                TempData["LoginResult"] = "Invalid UserName and Password";
                 return View();
             }
         }
@@ -70,6 +72,11 @@ namespace OnlineLearningPortal.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+        public ActionResult LogOut()
+        {
+            Session.Clear();
+            return Redirect("~/Home/Index");
         }
     }
 }

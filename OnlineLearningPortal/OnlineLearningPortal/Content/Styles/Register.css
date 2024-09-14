@@ -91,7 +91,7 @@ input {
 #state, #city, .emailBox input, .mobileBox input,
 .usernameBox input, .pwdBox input,#firstName,#lastName
 {
-    height: 35px;
+    /*height: 35px;*/
     padding: 8px;
 }
 

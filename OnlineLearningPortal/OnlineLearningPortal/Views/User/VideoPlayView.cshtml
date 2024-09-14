@@ -1,0 +1,62 @@
+﻿@model IEnumerable<OnlineLearningPortal.Models.CourseModel>
+@{
+    ViewBag.Title = "VideoPlayView";
+    Layout = "~/Views/Shared/LogUserLayout.cshtml";
+}
+@Styles.Render("~/Content/Styles/VideoPlayView.css")
+
+<div class="VideoPlayContainer">
+    @foreach (var item in Model)
+    {
+        
+            <div class="course">
+                <h3 class="courseHeading">@item.Coursename</h3>
+                @{
+                    if (item.Enroll == "Pending")
+                    {
+                        <a href="#" style="background-color:gray;color:white;cursor:not-allowed" class="enrollBtn" disbled>Waiting for admin approval</a>
+                    }
+                    else if (item.Enroll == "Reject")
+                    {
+                        <a href="#" style="background-color:gray;color:white;cursor:not-allowed" class="enrollBtn" disbled>Reject</a>
+                    }
+                    else if (item.Enroll == "Approved")
+                    {
+                        <a href="~/User/CoursePage?courseid=@item.CourseID" class="enrollBtn">Go to Course</a>
+                    }
+                    else
+                    {
+                        <a href="~/User/CourseEnroll?CourseID=@item.CourseID" class="enrollBtn">@item.Enroll</a>
+                    }
+                }
+                <p class="enrolledCount">190009 alread enrolled</p>
+                <div class="courseContent">
+                    <p style="font-size:22px;font-weight:600">Description :</p>
+                    <p class="courseDesc">@item.Coursedesc</p>
+                </div>
+
+            </div>
+            <div class="tutourBox">
+                @{
+                    var image64 = Convert.ToBase64String(item.CoursePhoto);
+                    var src = string.Format("data:image/gif;base64,{0}", image64);
+                }
+                <img src="@src" class="courseImage" />
+                <h4 style="font-size:30px;padding:10px 0;">Course</h4>
+                <p style="padding-bottom:10px;">Gain insight into a topic and learn the fundamentals</p>
+                <hr />
+                <div class="tutourDetails">
+                    <img class="tutourImage" src="https://c.superprof.com/i/a/29009340/12948025/600/20240102190219/experienced-java-instructor-unleashing-the-power-java-programming-with-expert-guidance.jpg" width="50" height="50" />
+                    <span>James Ronald</span>
+                </div>
+            </div>
+    }
+</div>
+<div class="courseSpecContainer">
+    <div class="courseSpecBox">
+        <div class="ratingBox">
+
+        </div>
+    </div>
+</div>
+

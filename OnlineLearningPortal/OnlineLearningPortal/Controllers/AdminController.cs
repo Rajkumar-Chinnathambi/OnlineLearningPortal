@@ -11,7 +11,7 @@ namespace OnlineLearningPortal.Controllers
     public class AdminController : Controller
     {
         CourseRepository courseRepository;
-        public AdminController() { 
+        public AdminController() {
             courseRepository = new CourseRepository();
         }
         // GET: Admin
@@ -29,14 +29,15 @@ namespace OnlineLearningPortal.Controllers
             return View(allCourses);
         }
         [HttpGet]
-        public ActionResult AddCourse() { 
+        public ActionResult AddCourse() {
             return View();
         }
 
         [HttpPost]
-        public ActionResult AddCourse(CourseModel coursemodel) {
+        public ActionResult AddCourse(CourseModel coursemodel, HttpPostedFileBase Courseimage) {
+            coursemodel.CoursePhoto = new byte[Courseimage.ContentLength];
+            Courseimage.InputStream.Read(coursemodel.CoursePhoto, 0, Courseimage.ContentLength);
             CourseRepository courseRepository = new CourseRepository();
-
             var addStatus = courseRepository.AddCourse(coursemodel);
             if (addStatus)
             {
@@ -56,24 +57,24 @@ namespace OnlineLearningPortal.Controllers
             return View(singleCourse);
         }
         [HttpPost]
-        public ActionResult SaveEditCourse(CourseModel coursemodel) { 
+        public ActionResult SaveEditCourse(CourseModel coursemodel) {
             var updateStatus = courseRepository.SaveEditCourse(coursemodel);
             if (updateStatus)
             {
                 ViewBag.Message = "Successfully Updated";
-                return RedirectToAction("Course");
+                return RedirectToAction("Courses");
             }
             else
             {
                 ViewBag.Message = "Something Error";
-                return RedirectToAction("Course");
+                return RedirectToAction("Courses");
             }
         }
 
-        public ActionResult DeleteCourse(CourseModel coursemodel) { 
+        public ActionResult DeleteCourse(CourseModel coursemodel) {
             var deleteStatus = courseRepository.deleteCourse(coursemodel);
-            
-            return RedirectToAction("Courses"); 
+
+            return RedirectToAction("Courses");
         }
 
         public ActionResult AllUsers()
@@ -86,33 +87,45 @@ namespace OnlineLearningPortal.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public ActionResult CreateUser(UserModel user) {
             HomeRepository homeRepository = new HomeRepository();
             var insertStatus = homeRepository.RegisterValid(user);
             if (insertStatus)
             {
-                ViewBag.Message = "Successfully Created";
+                TempData["Message"] = "Successfully Created";
                 return View();
             }
             else
             {
-                ViewBag.Message = "Something error,try again";
+                TempData["Message"] = "Something error,try again";
                 return View();
             }
         }
-        public ActionResult EditUser(UserModel user) { 
+        public ActionResult EditUser(UserModel user) {
             var singleUser = courseRepository.GetSingleUser(user);
             return View(singleUser);
         }
         public ActionResult SaveEditUser(UserModel user) {
             courseRepository.EditUser(user);
-            return View("AllUsers"); 
+            return View("AllUsers");
         }
 
         public ActionResult DeleteUser(UserModel user) {
             courseRepository.DeleteUser(user);
-            return Redirect("~/Admin/AllUsers"); 
+            return Redirect("~/Admin/AllUsers");
+        }
+
+        public ActionResult CourseApproval() {
+            var list = courseRepository.GetPendingApprovalCourse();
+            return View(list);
+        }
+        [HttpGet]
+        public ActionResult CourseAcceptOrReject(int id,int status)
+        {
+            courseRepository.CourseAcceptOrReject(id, status);
+            return Redirect("~/Admin/CourseApproval");
         }
     }
 }

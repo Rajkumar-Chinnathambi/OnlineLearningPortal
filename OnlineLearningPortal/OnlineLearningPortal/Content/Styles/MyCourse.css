@@ -1,0 +1,44 @@
+﻿.MyCourseContainer{
+    width:70%;
+    margin:0 auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    gap:20px;
+    margin-top:20px;
+}
+.course {
+    display: flex;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.23), -2px -2px 4px rgba(0,0,0,0.23);
+    width:60%;
+    text-decoration:none;
+    color:black;
+    
+}
+.courseBox {
+    display: flex;
+    padding: 10px;
+    width: 100%;
+}
+.course .courseContent{
+    padding:10px;
+    display:flex;
+    flex-direction:column;
+}
+.btnBox{
+    margin-top:auto;
+}
+.playBtn, .deleteBtn {
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 10px;
+}
+.playBtn{
+    background-color:lightskyblue;
+}
+.deleteBtn{
+    background-color:red;
+}
