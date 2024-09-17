@@ -3,13 +3,9 @@
     margin:0;
 }
 .MainContainer {
-    width: 100vw;
+    width: calc(98vw + 16px);
     height: calc(100vh - 100px);
-    background-color: black;
-    /* background-image: url("https://www.simplilearn.com/ice9/assets/banner-right-web.webp");
-    background-repeat:no-repeat;
-    background-size:cover;
-    background-position:left;*/
+    background-color: black;   
     display: flex;
     justify-content: center;
     align-items: center;

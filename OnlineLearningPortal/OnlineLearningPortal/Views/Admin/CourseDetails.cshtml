@@ -1,0 +1,69 @@
+﻿@model OnlineLearningPortal.Models.CourseUsersModel
+@{
+    ViewBag.Title = "CourseDetails";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+@Styles.Render("~/Content/Styles/CourseDetails.css")
+<div class="paidCourseContainer">
+    @foreach (var item in Model.Coursemodel)
+    {
+
+        <div class="courseImageBox">
+            @{
+                var image64 = Convert.ToBase64String(item.CoursePhoto);
+                var src = string.Format("data:image/gif;base64,{0}", image64);
+            }
+            <img src="@src" class="courseImage" />
+        </div>
+        <div class="contentBox">
+            <div class="courseTitle">
+                <h1>@item.Coursename </h1>
+            </div>
+            <p class="courseDesc">@item.Coursedesc Learn Java, a powerful programming language that runs on billions of devices worldwide. Java is essential for anyone interested in developing android apps, web applications, and software</p>
+            <div class="reviewBox">
+                <h2>Comments</h2>
+                @if (Model.Commentmodel != null)
+                {
+                    foreach (var comment in Model.Commentmodel)
+                    {
+                        <div class="review">
+                            <img src="https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w1200/2023/10/free-images.jpg" />
+                            <p>
+                                @comment.commentText
+                            </p>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    }
+</div>
+<div>
+    
+    <div class="courseApprovalContainer">
+        <h2 style="padding:10px 0;">Course Enrolled Users</h2>
+        <table>
+            <tr>
+                <th>User name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+            </tr>
+            @if (Model.Usermodel != null)
+            {
+                foreach (var item in Model.Usermodel)
+                {
+                    <tr>
+                        <td>@item.UserName</td>
+                        <td>@item.Email</td>
+                        <td>@item.PhoneNumber</td>
+                    </tr>
+
+                }
+            }
+
+        </table>
+    </div>
+
+</div>
+

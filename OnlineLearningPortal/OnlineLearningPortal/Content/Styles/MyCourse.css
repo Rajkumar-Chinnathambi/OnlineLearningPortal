@@ -9,9 +9,12 @@
     margin-top:20px;
 }
 .course {
+    flex-grow:1;
     display: flex;
     box-shadow: 2px 2px 4px rgba(0,0,0,0.23), -2px -2px 4px rgba(0,0,0,0.23);
-    width:60%;
+    min-width:60%;
+    width:70%;
+    border-radius:5px;
     text-decoration:none;
     color:black;
     

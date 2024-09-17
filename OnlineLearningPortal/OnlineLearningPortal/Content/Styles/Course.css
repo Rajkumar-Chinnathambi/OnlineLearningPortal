@@ -1,4 +1,4 @@
-﻿
+﻿/*
 .CoursesContainer{
     width:80vw;
     display:flex;
@@ -6,36 +6,42 @@
     align-items:center;
 }
 table {
-    width: 100%;
+    width: 1000px;
     border-collapse: collapse;
     margin: 20px 0;
     font-family: Arial, sans-serif;
+    border:none;
+    padding:20px;
 }
-
-
 th {
     background-color: #007BFF; 
     color: #ffffff; 
     padding: 10px;
     text-align: left;
     font-weight: bold;
+    border:none;
 }
 
 
 td {
     padding: 10px;
-    border-bottom: 1px solid #ddd; 
-    vertical-align: top; 
+    vertical-align: center; 
+    border:none;
+}
+tr td:nth-child(4) {
+    max-width: 350px;
+}
+tr:nth-child(odd) {
+    background: #f1f1f1;
 }
 
-
 tr:hover {
-    background-color: #f1f1f1; /
+    background-color: #f1f1f1; 
 }
 
 td a {
     color: #007BFF; 
-    text-decoration: none; /
+    text-decoration: none; 
     margin-right: 10px;
 }
 
@@ -99,5 +105,90 @@ iframe {
         padding-left: 10px;
         font-weight: bold;
         white-space: nowrap;
+    }
+}
+*/
+.CoursesContainer {
+    margin: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.createBtnBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+    .createBtnBox h2 {
+        margin: 0;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+.addCourseBtn {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+    .addCourseBtn:hover {
+        background-color: #0056b3;
+    }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+table, th, td {
+    border: 2px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    font-size: 14px;
+}
+
+th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+td {
+    vertical-align: middle;
+}
+tr td:nth-child(4) {
+    max-width: 550px;
+}
+.courseImage {
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+td a {
+    color: #007bff;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+    td a:hover {
+        color: #0056b3;
+    }
+
+td i {
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    table, th, td {
+        font-size: 12px;
+    }
+
+    .addCourseBtn {
+        padding: 8px 12px;
     }
 }

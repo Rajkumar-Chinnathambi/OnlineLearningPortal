@@ -1,4 +1,4 @@
-﻿@model IEnumerable<OnlineLearningPortal.Models.CourseModel>
+﻿@model OnlineLearningPortal.Models.CourseCommentModel
 
 @{
     ViewBag.Title = "CoursePage";
@@ -9,7 +9,7 @@
 
 <div class="coursePageContainer">
     
-    @foreach (var item in Model)
+    @foreach (var item in Model.Coursemodel)
     {
              <div class="courseContentContainer">
                 <div class="courseVideoBox">
@@ -31,15 +31,30 @@
                     <h2 style="padding-left:15px;">Comments</h2>
                     <div class="review">
                         <img src="https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w1200/2023/10/free-images.jpg" />
-                        <input class="commentInput" type="text" placeholder="Place your comment" />
-                        <button class="sendBtn">></button>
+                        <form action="~/User/SaveComment" method="post" style="width:100%">
+                            <input value="@item.CourseID" name="CourseId" hidden />
+                            <input class="commentInput" type="text" placeholder="Place your comment" name="commentText"/>
+                            <button type="submit" class="sendBtn">></button>
+                        </form>
                     </div>
+                    @if (Model.Commentmodel != null)
+                    {
+                        foreach (var comment in Model.Commentmodel)
+                        {
+                            <div class="review">
+                                <img src="https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w1200/2023/10/free-images.jpg" />
+                                <p>
+                                   @comment.commentText
+                                </p>
+                            </div>
+                        }
+                    }
                     @for (int i = 1; i <= 10; i++)
                     {
                         <div class="review">
                             <img src="https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w1200/2023/10/free-images.jpg" />
                             <p>
-                               I'm a little early, but thank you for 1,000,000 subscribers everybody!
+                                I'm a little early, but thank you for 1,000,000 subscribers everybody!
                                 I would not be able to continue if it weren't for your support.
                                 I appreciate you.
                             </p>

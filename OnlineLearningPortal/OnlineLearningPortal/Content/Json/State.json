@@ -1,0 +1,69 @@
+﻿{
+  "states": [
+    {
+      "state": "Tamil Nadu",
+      "cities": [
+        "Chennai",
+        "Coimbatore",
+        "Madurai",
+        "Tiruchirappalli",
+        "Salem",
+        "Tirunelveli",
+        "Vellore",
+        "Erode",
+        "Dharmapuri",
+        "Kanchipuram",
+        "Kumbakonam",
+        "Nagercoil",
+        "Dindigul",
+        "Arakkonam",
+        "Karaikal",
+        "Thanjavur",
+        "Cuddalore",
+        "Sivakasi",
+        "Tiruppur",
+        "Villupuram",
+        "Ramanathapuram",
+        "Nagapattinam",
+        "Perambalur",
+        "Pudukkottai",
+        "Virudhunagar",
+        "Theni"
+      ]
+    },
+    {
+      "state": "Karnataka",
+      "cities": [
+        "Bengaluru",
+        "Mysuru",
+        "Hubli",
+        "Dharwad",
+        "Mangalore",
+        "Belgaum",
+        "Shimoga",
+        "Tumkur",
+        "Kolar",
+        "Chitradurga",
+        "Hospet",
+        "Bagalkot",
+        "Davangere",
+        "Gulbarga",
+        "Udupi",
+        "Mandya",
+        "Hassan",
+        "Raichur",
+        "Bidar",
+        "Kalaburagi",
+        "Koppal",
+        "Karwar",
+        "Yadgir",
+        "Chikkamagaluru",
+        "Kudligi",
+        "Nargund",
+        "Sira",
+        "Sultanpur",
+        "Kampli"
+      ]
+    }
+  ]
+}

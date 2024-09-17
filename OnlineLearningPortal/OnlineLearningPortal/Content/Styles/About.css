@@ -1,13 +1,14 @@
 ﻿.aboutContainer{
     display:flex;
     padding:30px;
-    width:100%;
+    width:95%;
     justify-content:center;
     align-items:center;
+    height:calc(100vh - 80px);
 }
 .aboutContent{
     width:40%;
-    padding:10px;
+    padding:10px 40px 10px 20px;
     
 }
 .aboutContent h2{

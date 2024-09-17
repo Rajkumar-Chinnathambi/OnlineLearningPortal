@@ -5,7 +5,7 @@
 }
 
 @Styles.Render("~/Content/Styles/AddCourse.css")
-<div>
+<div class="addcourseContainer">
     <form action="~/Admin/AddCourse" method="post" enctype="multipart/form-data">
         <h1>Add Course</h1>
         @if (ViewBag.Message != null)
@@ -28,14 +28,22 @@
             <small id="coursesrcError"></small>
         </div>
         <div class="inputGroup">
-            <label>Course Desc</label><br />
+            <label>Course Description</label><br />
             <textarea id="coursedesc" name="Coursedesc" onabort="CoursedescValid()"></textarea>
             <small id="coursedescError"></small>
         </div>
         <div class="inputGroup">
-            <label>Course Desc</label><br />
-            <input type="file" name="Courseimage" />
-            <small id="coursedescError"></small>
+            <label>Course Image</label><br />
+            <input type="file" name="Courseimage" accept="image/*" />
+            <small id="courseImageError"></small>
+        </div>
+        <div class="inputGroup">
+            <label>Course Type</label><br />
+            <select name="CourseType">
+                <option value="Free">Free</option>
+                <option value="Paid">Paid</option>
+            </select>
+            <small id="coursetypeError"></small>
         </div>
         <button type="submit">Submit</button>
     </form>

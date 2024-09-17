@@ -6,12 +6,13 @@
 
 
 @Styles.Render("~/Content/Styles/Register.css")
-
+<div class="createUserContainer" style="display:flex;justify-content:center;width:calc(100vw - 290px);">
     <form class="form" action="~/Admin/AllUsers" method="post" id="RegisterForm">
         <div class="header">
             <h2 class="heading">Create User</h2>
         </div>
-        @if (TempData["Message"] != null) { 
+        @if (TempData["Message"] != null)
+        {
             <small>@TempData["Message"]</small>
         }
 
@@ -146,9 +147,9 @@
             <label for="remember">Remember Me</label>
         </div>
         <div class="submit-box">
-            <input type="submit" id="submitBtn" class="submitBtn" value="Create"/>
+            <input type="submit" id="submitBtn" class="submitBtn" value="Create" />
         </div>
-       
-    </form>
 
+    </form>
+</div>
 @Scripts.Render("~/Scripts/CreateUser.js")

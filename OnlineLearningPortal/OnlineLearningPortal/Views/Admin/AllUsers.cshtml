@@ -5,33 +5,35 @@
 }
 @Styles.Render("~/Content/Styles/AllUsers.css")
 <div class="titleHeader">
-    <h2>AllUsers</h2>
+    <h2>All Users</h2>
+    <form action="~/Admin/AllUsers">
+        <input type="search" name="search" value="@ViewBag.search" placeholder="Search username" />
+        <input type="submit" value="Search"/>
+    </form>
     <a href="~/Admin/CreateUser" class="addUserBtn">Add User</a>
 </div>
 <div class="AllUserTable" style="width:calc(100vw - 280px);overflow-x:auto;">
 <table border="2">
     <tr>
-        <th>First Name</th>        
-        <th>User Name</th>        
+        <th>Full Name</th>        
+        <th>Username</th>        
         <th>Email</th>        
         <th>Mobile</th>
         <th>State</th>
-        <th>User Type</th>
         <th>Action</th>
     </tr>
     @foreach (var item in Model)
     {
         <tr>
-            <td>@item.FirstName</td>
+            <td>@item.FirstName @item.LastName</td>
             <td>@item.UserName</td>
             <td>@item.Email</td>           
             <td>@item.PhoneNumber</td>
             <td>@item.State</td>
-            <td>@item.UserType</td>
             <td>
-                <a href="~/Admin/EditUser?Id=@item.Id">View Details</a>
-                <a href="~/Admin/EditUser?Id=@item.Id">Edite</a>
-                <a href="~/Admin/DeleteUser?Id=@item.Id">Delete</a>
+                <a href="~/Admin/UserDetailView?Id=@item.Id"><i class="fa-solid fa-eye"></i></a>
+                <a href="~/Admin/EditUser?Id=@item.Id"><i class="fa-solid fa-pen-to-square"></i></a>
+                <a href="~/Admin/DeleteUser?Id=@item.Id"><i class="fa-solid fa-trash"></i></a>
             </td>
         </tr>
     }

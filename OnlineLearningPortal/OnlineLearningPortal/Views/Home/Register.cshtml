@@ -10,10 +10,14 @@
             <h2 class="heading">Create Your Account</h2>
             <h3 class="heading">Join us today <span style="color:deeppink">&</span> Start your journey<span style="color:deeppink">!</span></h3>
         </div>
+        @if (ViewBag.Error != null) { 
+            <span style="display:block;padding:10px 10px;color:red;background-color:#f5b7b7;margin-bottom:5px;border-radius:5px;">@ViewBag.Error</span>
+        }
+
         <div class="personal-info">
-            <div class="grid">
+            <div class="grid" style="margin-bottom:20px;">
                 <div class="firstNameBox">
-                    <label>First Name</label>
+                    <label asp-for="FirstName">First Name</label>
                     <input type="text" value="" id="firstName" name="FirstName" onblur="FirstNameValid()" />
                     <small id="firstNameError" class="error"></small>
                 </div>
@@ -29,20 +33,21 @@
                     <input type="text" value="" id="userName" name="UserName" onblur="UserNameValid()" />
                     <small id="userNameError" class="error"></small>
                 </div>
-                <div class="pwdBox">
+                <div class="pwdBox" style="position:relative">
                     <label>Password</label>
                     <input type="password" value="" id="pwd" name="Password" onblur="PasswordValid()" />
                     <small id="pwdError" class="error"></small>
+                    <i class="fas fa-eye-slash" id="togglePwd" style="position: absolute; right: 10px; top: 40px; cursor: pointer;" onclick="togglePassword()"></i>
                 </div>
                 <div class="date-box">
                     <label>Date of Birth</label>
-                    <input type="date" value="" max="2006-05-05" id="date" name="DOB" required />
-                    <small class="dateError"></small>
+                    <input type="date" value="" max="2006-05-05" id="date" name="DOB" required onblur="DobValid()" />
+                    <small id="dateError"></small>
                 </div>
                 <div class="gender-box">
                     <label>Gender</label>
-                    <select id="state" name="Gender">
-                        <option>Choose Gender</option>
+                    <select id="gender" name="Gender" onblur="GenderValid()">
+                        <option >Choose Gender</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                     </select>
@@ -66,59 +71,16 @@
                     </div>
                     <div class="state-box">
                         <label>State</label>
-                        <select id="state" name="State">
+                        <select id="state" name="State" onblur="StateValid()">
                             <option>Choose State</option>
-                            <option >Andhra Pradesh</option>
-                            <option >Arunachal Pradesh</option>
-                            <option >Assam</option>
-                            <option >Bihar</option>
-                            <option >Chhattisgarh</option>
-                            <option >Goa</option>
-                            <option >Gujarat</option>
-                            <option >Haryana</option>
-                            <option >Himachal Pradesh</option>
-                            <option >Jharkhand</option>
-                            <option >Karnataka</option>
-                            <option >Kerala</option>
-                            <option >Madhya Pradesh</option>
-                            <option >Maharashtra</option>
-                            <option >Manipur</option>
-                            <option >Meghalaya</option>
-                            <option >Mizoram</option>
-                            <option >Nagaland</option>
-                            <option >Odisha</option>
-                            <option >Punjab</option>
-                            <option >Rajasthan</option>
-                            <option >Sikkim</option>
-                            <option >Tamil Nadu</option>
-                            <option >Telangana</option>
-                            <option >Tripura</option>
-                            <option >Uttar Pradesh</option>
-                            <option >Uttarakhand</option>
-                            <option >West Bengal</option>
+                            
                         </select>
                         <small id="stateError"></small>
                     </div>
                     <div class="city-box">
                         <label>City</label>
-                        <select id="city" name="City">
-                            <option>Choose City</option>
-                            <option >Chennai</option>
-                            <option >Coimbatore</option>
-                            <option >Madurai</option>
-                            <option >Tiruchirappalli</option>
-                            <option >Salem</option>
-                            <option >Tirunelveli</option>
-                            <option >Vellore</option>
-                            <option >Thanjavur</option>
-                            <option >Aruppukottai</option>
-                            <option >Dindigul</option>
-                            <option >Kumbakonam</option>
-                            <option >Kanchipuram</option>
-                            <option >Ramanathapuram</option>
-                            <option >Nagercoil</option>
-                            <option >Tuticorin</option>
-                            <option >Virudhunagar</option>
+                        <select id="city" name="City" onblur="CityValid()">
+                            <option>Choose City</option>                           
                         </select>
                         <small id="cityError"></small>
                     </div>
@@ -132,13 +94,101 @@
             <label for="remember">Remember Me</label>
         </div>
         <div class="submit-box">
-            <input type="submit" id="submitBtn"  class="submitBtn" value="Register" />
+            <input type="submit" id="submitBtn" class="submitBtn" value="Register" />
         </div>
         <div class="account">
             If already have an account? <a href="Index">Login</a>
         </div>
-    </form>   
+    </form>
 </div>
-@Scripts.Render("~/Scripts/Register.js")
 
+@Scripts.Render("~/Scripts/Register.js")
+<script src="~/Scripts/jquery-3.7.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+       
+         $.ajax({
+             url: 'https://localhost:44363/Home/State', // URL of the server
+              method: 'GET', // or "POST" for sending data
+              success: function (response) {
+                  $('#state').html("<option>Choose State</option>")
+                  response.states.map(value => {
+                      $('#state').append("<option>"+value.state+"</option>")
+                  });                 
+              },
+              error: function (xhr, status, error) {
+                  // Handle the error
+                  console.log(error)
+              }
+         });
+
+        $('#state').change(function () {
+            let Statevalue = $(this).val();
+            $("#city").html("<option>Choose City</option>")
+            $.ajax({
+                url: 'https://localhost:44363/Home/State',
+                method: 'GET',
+                success: function (response) {
+                    response.states.map(value => {
+                        if (value.state == Statevalue) {
+                            value.cities.map(city => {
+                                $("#city").append("<option>" + city + "</option>")
+                            })
+                        }
+                    });
+                },
+                error: function (xhr, status, error) {
+                    console.log(error)
+                }
+            });
+        })
+        $('#userName').blur(function () {
+            if ($('#userName').val() != "") {
+
+                $.ajax({
+                    url: 'https://localhost:44363/Home/GetUserByUsername?username=' + $('#userName').val(),
+                    method: 'GET',
+                    success: function (response) {
+                        if (response != "") {
+                            $("#userNameError").text("Already Exist");
+                        }
+                        else {
+                            $("#userNameError").text("");
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        console.log(error)
+                    }
+                });
+            } else {
+                $("#userNameError").text("Username Empty");
+            }
+        })
+
+        $('#email').blur(function () {
+            if ($('#email').val() != "") {
+                $.ajax({
+                    url: 'https://localhost:44363/Home/GetUserByEmail?email=' + $('#email').val(),
+                    method: 'GET',
+                    success: function (response) {
+                        if (response != "") {
+                            $("#emailError").text("Already Exist");
+                        }
+                        else {
+                            $("#emailError").text("");
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        // Handle the error
+                        console.log(error)
+                    }
+                });
+            } else {
+                $("#emailError").text("Email Empty");
+            }
+        })
+
+
+    });
+</script>
 

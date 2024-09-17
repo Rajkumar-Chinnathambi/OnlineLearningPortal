@@ -1,4 +1,5 @@
-﻿using OnlineLearningPortal.Models;
+﻿using Microsoft.SqlServer.Server;
+using OnlineLearningPortal.Models;
 using OnlineLearningPortal.Repository;
 using System;
 using System.Collections.Generic;
@@ -8,19 +9,22 @@ using System.Web.Mvc;
 
 namespace OnlineLearningPortal.Controllers
 {
+    [Authorize(Roles ="Admin")]
     public class AdminController : Controller
     {
         CourseRepository courseRepository;
+        CommentRepository commentRepository;
         public AdminController() {
             courseRepository = new CourseRepository();
+            commentRepository= new CommentRepository();
         }
         // GET: Admin
         public ActionResult Index()
         {
             ViewBag.CourseCount = courseRepository.AllCourseCount();
             ViewBag.UserCount = courseRepository.AllUserCount();
-            var allUser = courseRepository.GetAllUsers();
-            return View(allUser);
+            var allContactComments = commentRepository.GetAllContactComments();
+            return View(allContactComments);
         }
         public ActionResult Courses() {
             CourseRepository courseRepository = new CourseRepository();
@@ -77,9 +81,16 @@ namespace OnlineLearningPortal.Controllers
             return RedirectToAction("Courses");
         }
 
-        public ActionResult AllUsers()
+        public ActionResult AllUsers(string search)
         {
             var allUser = courseRepository.GetAllUsers();
+            if (search != null)
+            {
+               string lowercaseSearch = search.ToLower();
+               var  allUsers=allUser.Where(user => user.UserName.Contains(search));
+                ViewBag.search = search;
+                return View(allUsers);
+            }            
             return View(allUser);
         }
         [HttpGet]
@@ -126,6 +137,24 @@ namespace OnlineLearningPortal.Controllers
         {
             courseRepository.CourseAcceptOrReject(id, status);
             return Redirect("~/Admin/CourseApproval");
+        }
+        public ActionResult CourseDetails(CourseModel course) {
+            var userlist = courseRepository.GetCourseWithUsers(course);
+            var singleCourseDetail = courseRepository.GetCourseById(course);
+            var commentByCourse = commentRepository.GetAllCommentsByCourse(course);
+            CourseUsersModel courseusermodel = new CourseUsersModel()
+            {
+                Coursemodel = singleCourseDetail,
+                Usermodel = userlist,
+                Commentmodel = commentByCourse
+            };
+            return View(courseusermodel);
+        }
+
+        public ActionResult UserDetailView(UserModel user)
+        {
+            var singleUser = courseRepository.GetSingleUser(user);
+            return View(singleUser);
         }
     }
 }

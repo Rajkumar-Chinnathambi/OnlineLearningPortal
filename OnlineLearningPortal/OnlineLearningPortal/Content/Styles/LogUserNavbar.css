@@ -4,12 +4,13 @@
     justify-content: space-between;
     align-items: center;
     background-color: #e3d3d3;
-    padding: 0 50px;
+    padding: 0 10px;
+    position:sticky;
+    top:0;
 }
 
 .logoBox {
     height: 100%;
-    padding: 10px;
 }
 
     .logoBox img {

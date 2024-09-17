@@ -1,48 +1,40 @@
-﻿.AllUserTable{
+﻿/*.AllUserTable{
     width:100%;
     overflow:hidden;
     padding:0;
 }
-
-/* General Table Styling */
 table {
     width: 100%;
-    border-collapse: collapse; /* Ensures borders are collapsed into a single border */
+    border-collapse: collapse;
     margin: 20px 0;
-    font-family: Arial, sans-serif; /* Sets a clean font */
+    font-family: Arial, sans-serif;
+    border:none;
 }
-
-/* Table Header Styling */
 th {
-    background-color: #007BFF; /* Background color for header */
-    color: #ffffff; /* Text color for header */
+    background-color: #007BFF; 
+    color: #ffffff; 
     padding: 12px 15px;
     text-align: left;
+    border:none;
     font-weight: bold;
 }
-
-/* Table Cell Styling */
 td {
     padding: 12px 15px;
-    border-bottom: 1px solid #ddd; /* Light border for rows */
-    vertical-align: top; /* Aligns content to the top of cell */
+    border: none;
+    vertical-align: top;
+    border-bottom: #000000;
 }
-
-/* Table Row Hover Effect */
 tr:hover {
-    background-color: #f1f1f1; /* Light background color on hover */
+    background-color: #f1f1f1;
 }
-
-/* Action Links Styling */
 td a {
-    color: #007BFF; /* Blue color for links */
-    text-decoration: none; /* Removes underline from links */
+    color: #007BFF; 
+    text-decoration: none; 
     margin-right: 10px;
     font-weight: bold;
 }
-
 td a:hover {
-    text-decoration: underline; /* Underline on hover */
+    text-decoration: underline; 
 }
 .titleHeader{
     display:flex;
@@ -50,8 +42,8 @@ td a:hover {
     align-items:center;
     padding-right:10px;
 
-}
-.addUserBtn{
+}*/
+/*.addUserBtn{
     flex-grow:0;
     padding:10px 18px;
     background-color:green;
@@ -59,9 +51,9 @@ td a:hover {
     text-decoration:none;
     border-radius:5px;
     align-items:center;
-}
-/* Optional: Responsive Table Design */
-@media (max-width: 768px) {
+}*/
+
+/*@media (max-width: 768px) {
     table, thead, tbody, th, td, tr {
         display: block;
     }
@@ -93,12 +85,173 @@ td a:hover {
         font-weight: bold;
         white-space: nowrap;
     }
-}
-
-/* Heading Styling */
-h2 {
+}*/
+/*h2 {
     font-size: 28px;
     color: #333;
+    margin-bottom: 10px;
+}*/
+/*.titleHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 20px;
+    font-family: Arial, sans-serif;
 }
 
+.titleHeader h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.titleHeader form {
+    display: flex;
+    align-items: center;
+}
+
+.titleHeader input[type="search"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-right: 10px;
+    box-sizing: border-box;
+}
+
+.titleHeader input[type="submit"] {
+    padding: 8px 16px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.titleHeader input[type="submit"]:hover {
+    background-color: #388e3c;
+}
+
+.addUserBtn {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.addUserBtn:hover {
+    background-color: #0056b3;
+}*/
+
+
+.titleHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 20px 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .titleHeader h2 {
+        font-size: 24px;
+        font-weight: bold;
+        margin: 0;
+    }
+
+    .titleHeader form {
+        display: flex;
+        align-items: center;
+    }
+
+    .titleHeader form input[type="search"] {
+        padding: 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        margin-right: 10px;
+    }
+
+    .titleHeader form input[type="submit"] {
+        padding: 8px 15px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .titleHeader form input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+
+    .addUserBtn {
+        padding: 10px 15px;
+        background-color: #28a745;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+    .addUserBtn:hover {
+        background-color: #218838;
+    }
+
+    .AllUserTable {
+        margin-top: 20px;
+        font-family: Arial, sans-serif;
+    }
+
+    .AllUserTable table {
+        width: 100%;
+        border-collapse: collapse;
+        overflow-x: auto;
+        min-width: 800px;
+    }
+
+    .AllUserTable th, .AllUserTable td {
+        padding: 12px;
+        border: 2px solid #ddd;
+        text-align: left;
+    }
+
+    .AllUserTable th {
+        background-color: #f4f4f4;
+        font-weight: bold;
+    }
+
+    .AllUserTable td {
+        vertical-align: middle;
+    }
+
+    .AllUserTable td a {
+        color: #007bff;
+        text-decoration: none;
+        margin-right: 10px;
+    }
+
+    .AllUserTable td a:hover {
+        color: #0056b3;
+    }
+
+    .AllUserTable td i {
+        font-size: 16px;
+    }
+
+    @media (max-width: 768px) {
+        .titleHeader h2 {
+            font-size: 20px;
+        }
+
+        .addUserBtn {
+            padding: 8px 12px;
+        }
+
+        .AllUserTable table, .AllUserTable th, .AllUserTable td {
+            font-size: 12px;
+        }
+    }

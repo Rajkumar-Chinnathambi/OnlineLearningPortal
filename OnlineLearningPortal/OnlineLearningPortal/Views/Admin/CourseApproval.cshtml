@@ -5,55 +5,56 @@
 }
 <style>
     .courseApprovalContainer {
-        margin: 20px auto; /* Center the table container */
-        max-width: 800px; /* Max width for the container */
-        border: 1px solid #ddd; /* Border around the container */
-        border-radius: 8px; /* Rounded corners */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-        background-color: #f9f9f9; /* Light background color */
-        padding: 20px; /* Padding inside the container */
+        margin: 20px auto;
+        width:800px;
+        max-width: 800px; 
+        border: 1px solid #ddd; 
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+        background-color: #f9f9f9; 
+        padding: 20px;
     }
 
         .courseApprovalContainer table {
-            width: 100%; /* Full width */
-            border-collapse: collapse; /* Remove gaps between table cells */
-            font-family: Arial, sans-serif; /* Font style */
-            font-size: 16px; /* Font size */
-            color: #333; /* Text color */
+            width: 100%; 
+            border-collapse: collapse; 
+            font-family: Arial, sans-serif; 
+            font-size: 16px; 
+            color: #333; 
         }
 
         .courseApprovalContainer th,
         .courseApprovalContainer td {
-            padding: 12px 15px; /* Cell padding */
-            text-align: left; /* Left-align text */
-            border-bottom: 1px solid #ddd; /* Bottom border */
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
         }
 
         .courseApprovalContainer th {
-            background-color: #f0f0f0; /* Background color for header cells */
-            font-weight: bold; /* Bold header text */
+            background-color: #f0f0f0;
+            font-weight: bold; 
         }
 
         .courseApprovalContainer tr:nth-child(even) {
-            background-color: #f7f7f7; /* Alternate row background color */
+            background-color: #f7f7f7; 
         }
 
         .courseApprovalContainer tr:hover {
-            background-color: #e6f7ff; /* Highlight row on hover */
+            background-color: #e6f7ff; 
         }
 
         .courseApprovalContainer a {
-            text-decoration: none; /* Remove underline from links */
-            color: #007bff; /* Link color */
-            padding: 8px 12px; /* Padding around links */
-            border: 1px solid #007bff; /* Border for links */
-            border-radius: 5px; /* Rounded corners for links */
-            transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+            text-decoration: none; 
+            color: #007bff; 
+            padding: 8px 12px; 
+            border: 1px solid #007bff; 
+            border-radius: 5px; 
+            transition: background-color 0.3s, color 0.3s; 
         }
 
             .courseApprovalContainer a:hover {
-                background-color: #007bff; /* Background color on hover */
-                color: #fff; /* Text color on hover */
+                background-color: #007bff; 
+                color: #fff; 
             }
 
 </style>
@@ -71,7 +72,7 @@
                 <td>@item.CourseName</td>
                 <td>
                     <a href="~/Admin/CourseAcceptOrReject/@item.Id?status=1">Approve</a>
-                    <a href="~/Admin/CourseAcceptOrReject/@item.Id?status=0">Reject</a>
+                    <a href="~/Admin/CourseAcceptOrReject/@item.Id?status=0">Waiting List</a>
                 </td>
             </tr>
 

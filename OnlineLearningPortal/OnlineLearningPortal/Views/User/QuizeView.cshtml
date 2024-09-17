@@ -2,86 +2,69 @@
 @{
     ViewBag.Title = "QuizeView";
     Layout = "~/Views/Shared/LogUserLayout.cshtml";
-    
+    int i = 0;
 }
 @Styles.Render("~/Content/Styles/QuizeView.css")
 
 <div class="quizeContainer">
     <div class="quizeBox">
         <h2>QuizeView</h2>
-        @{
-            int i = 0;
-        }
-        @foreach (var item in Model)
-        {
-            <div class="singleQuize">
-                <p class="question">@item.quize</p>
+       
+        <div id="result" style="font-size:30px;padding:10px 0;font-weight:700"></div>
+       
+
+        <div class="singleQuize">
+           
+            @foreach (var item in Model)
+            {
+                i = i + 1;
+                <p class="question">@i .  @item.quize</p>
+
                 <ul class="questions">
                     <li>
-                        <input type="radio" value="@item.option1" name="selectAnswer1" />
+                        <input type="radio" value="@item.option1" name="question_@i" />
                         <label>@item.option1</label>
                     </li>
                     <li>
-                        <input type="radio" value="@item.option2" name="selectAnswer1" />
+                        <input type="radio" value="@item.option2" name="question_@i"/>
                         <label>@item.option2</label>
                     </li>
                     <li>
-                        <input type="radio" value="@item.option3" name="selectAnswer1" />
+                        <input type="radio" value="@item.option3" name="question_@i"/>
                         <label>@item.option3</label>
                     </li>
                     <li>
-                        <input type="radio" value="@item.option4" name="selectAnswer1" />
+                        <input type="radio" value="@item.option4" name="question_@i"/>
                         <label>@item.option4</label>
                     </li>
-                    <li id="answer" style="display:none">@item.answer</li>
+                    <li class="answer" style="display:none">@item.answer</li>
 
                 </ul>
+            }
+        </div>
 
-            </div>
-            <div class="singleQuize">
-                <p class="question">@item.quize</p>
-                <ul class="questions">
-                    <li>
-                        <input type="radio" value="@item.option1" />
-                        <label>@item.option1</label>
-                    </li>
-                    <li>
-                        <input type="radio" value="@item.option2" />
-                        <label>@item.option2</label>
-                    </li>
-                    <li>
-                        <input type="radio" value="@item.option3" />
-                        <label>@item.option3</label>
-                    </li>
-                    <li>
-                        <input type="radio" value="@item.option4" />
-                        <label>@item.option4</label>
-                    </li>
-                    <li id="answer" style="display:none">@item.answer</li>
 
-                </ul>
-
-            </div>
-            <button class="answerSubmitBtn" onclick="CheckAnswer()">Submit</button>
-        }
+        
+        <button class="answerSubmitBtn" onclick="CheckAnswer()">Submit</button>
         <script>
-            const ul = document.querySelectorAll(".questions")
+            const allQuize = document.querySelectorAll(".questions")
             function CheckAnswer() {
                 let score = 0
-                ul.forEach(ul => {
+                allQuize.forEach((ul) => {
+                    let selectStatus = false;
                     let inputs = ul.querySelectorAll('input')
                     inputs.forEach(input => {
                         if (input.checked) {
-                            let answer = ul.querySelector("#answer").innerHTML;
+                            let answer = ul.querySelector(".answer").innerText;
                             if (input.value == answer) {
                                 score += 1;
+                                selectStatus = true;
                             }
                         }
                     })
 
-
                 })
-                document.querySelector(".answerSubmitBtn").innerHTML = "Try Again";
+                document.getElementById("result").innerHTML = "Result : " + score;
                 console.log(score)
             }
         </script>

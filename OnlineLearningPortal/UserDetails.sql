@@ -10,10 +10,10 @@ create table UserDetails(
 	City varchar(50),
 	State varchar(50),
 	UserName varchar(50) not null unique,
-	Password varchar(50) not null,
+	Password varchar(max) not null,
 	UserType varchar(20) not null
 	);
-
+	alter table UserDetails alter column Password varchar(max);
 	create procedure SPI_User
 	(
 	
@@ -49,10 +49,9 @@ create table UserDetails(
 		select * from UserDetails where Email=@Email and Password=@Password		
 	end
 
-	exec SPR_SingleUser 'user@gmail.com','user@123'
-	drop procedure SPR_SingleUser
+	
 
-	select * from UserDetails 
+
 
 	create procedure SPU_User
 	(
@@ -111,3 +110,5 @@ create table UserDetails(
 	end
 
 	exec SPR_GetUserById 2
+
+	select * from UserDetails

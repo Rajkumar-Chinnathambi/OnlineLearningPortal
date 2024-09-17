@@ -1,0 +1,145 @@
+﻿﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+.EditContainer{
+    width:calc(98vw - 280px);
+    display:flex;
+    justify-content:center;
+}
+input {
+    border-radius: 3px;
+    outline: none;
+    border: 1px solid #808080;
+}
+
+.mainContainer {
+    min-height: 100vh;
+    padding: 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(0,0,0,0.34),rgba(0,0,0,0.4)), url(https://wallpapercave.com/wp/wp9764081.jpg);
+    background-size: cover;
+}
+
+.form {
+    width: 700px;
+    padding: 20px 30px;
+    background-color: #f9f9f9;
+}
+
+.header {
+    text-align: center;
+    padding: 18px;
+}
+
+.heading {
+    margin: 5px 0px;
+    color: #7e49ca;
+}
+
+    .heading:nth-child(1) {
+        text-transform: uppercase;
+    }
+
+    .heading:nth-child(2) {
+        font-family: "Pacifico", cursive;
+        font-weight: 400;
+        font-style: normal;
+        color: #ffa500;
+    }
+
+
+.error {
+    color: red;
+    font-size: 16px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    row-gap:20px;
+}
+
+.date-box, .gender, .emailBox, .mobileBox,
+.usernameBox, .pwdBox,
+.firstNameBox, .lastNameBox {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.gender-inputs {
+    display: flex;
+    gap: 40px;
+}
+
+.address-box, .addressBox {
+    grid-column: span 2;
+}
+
+.addressBox {
+    display: flex;
+    flex-direction: column;
+}
+
+    .addressBox input,
+    .date-box input,
+    #state, #city, .emailBox input, .mobileBox input,
+    .usernameBox input, .pwdBox input, #firstName, #lastName {
+        height: 35px;
+        padding: 8px;
+        font-size:16px;
+    }
+
+    #state, .addressBox input, #city {
+        width: 100%;
+        margin-top: 8px;
+    }
+
+small {
+    padding: 2px;
+}
+
+.rememberBox, .account {
+    padding: 10px 0;
+}
+
+.submit-box, .account {
+    text-align: center;
+}
+
+.account {
+    font-size: 16px;
+}
+
+.submit-box input {
+    width: 50%;
+    border: none;
+    outline: none;
+    background-color: #6f2ecc;
+    padding: 8px 0;
+    color: white;
+    margin-top: 10px;
+    font-size:16px;
+}
+
+    .submit-box input:hover {
+        background-color: #7649b8;
+    }
+
+
+label {
+    font-size: 16px;
+}
+
+.date-box, .gender {
+    grid-column: span 1;
+}

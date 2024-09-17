@@ -23,18 +23,17 @@ main{
     justify-content: space-between;
     align-items: center;
     background-color: #e3d3d3;
-    padding: 0 50px;
+    padding: 0 10px;
 }
 
 .logoBox {
     height: 100%;
-    padding: 10px;
+    padding:0 10px;
 }
-
-    .logoBox img {
-        height: 100%;
-        object-fit: cover;
-    }
+.logoBox img {
+    height: 100%;
+    object-fit: cover;
+}
 
 .menu {
     display: flex;
@@ -88,16 +87,23 @@ footer {
 }
 .sidebarList{
     padding:10px 0 ;
+    padding-left:30px;
     list-style:none;
-    text-align:center;
+    text-align:left;
     margin-bottom:10px;
 }
 .sidebarList:hover{
     background-color:#b9acac;
 }
+.sidebarList i{
+    font-size :16px;
+    margin-right:15px;
+    color:darkslateblue;
+}
 .sidebarItem{
     text-decoration:none;
     font-size:16px;
+    text-align:left;
 }
 main{
     display:flex;

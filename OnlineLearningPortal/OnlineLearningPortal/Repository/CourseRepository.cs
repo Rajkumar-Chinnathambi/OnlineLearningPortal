@@ -20,13 +20,14 @@ namespace OnlineLearningPortal.Repository
         {
             using (SqlConnection _connection = new SqlConnection(connectionString))
             {
+                List<CourseModel> list = new List<CourseModel>();
                 try
                 {
                     SqlCommand cmd = new SqlCommand("SPR_AllCourses",_connection);
                     cmd.CommandType=CommandType.StoredProcedure;
                     _connection.Open();
                     SqlDataReader reader = cmd.ExecuteReader();
-                    List<CourseModel> list = new List<CourseModel>();
+                   
                     while (reader.Read()) {
                         list.Add(new CourseModel()
                         {
@@ -42,7 +43,7 @@ namespace OnlineLearningPortal.Repository
                     return list;
                 }
                 catch {
-                    return null;
+                    return list;
                 }
             }
             return null;
@@ -59,9 +60,10 @@ namespace OnlineLearningPortal.Repository
                     _connection.Open();
                     cmd.Parameters.AddWithValue("@CourseCatagory", course.CourseCatagory);
                     cmd.Parameters.AddWithValue("@Coursename", course.Coursename);
-                    cmd.Parameters.AddWithValue("@Coursesrc", course.Coursesrc); ;
+                    cmd.Parameters.AddWithValue("@Coursesrc", course.Coursesrc); 
                     cmd.Parameters.AddWithValue("@Coursedesc", course.Coursedesc);
                     cmd.Parameters.AddWithValue("@Courseimage", course.CoursePhoto);
+                    cmd.Parameters.AddWithValue("@CourseType", course.CourseType);
                     int result = cmd.ExecuteNonQuery();
                     if (result > 0)
                     {
@@ -255,7 +257,8 @@ namespace OnlineLearningPortal.Repository
                     cmd.Parameters.AddWithValue("@City", model.City);
                     cmd.Parameters.AddWithValue("@State", model.State);
                     cmd.Parameters.AddWithValue("@UserName", model.UserName);
-                    cmd.Parameters.AddWithValue("@Password", model.Password);
+                    EncPassword encPassword = new EncPassword();
+                    cmd.Parameters.AddWithValue("@Password", encPassword.Encrpte(model.Password));
                     _connection.Open();
                     int updateStatus = cmd.ExecuteNonQuery();
                     if (updateStatus > 0)
@@ -445,7 +448,8 @@ namespace OnlineLearningPortal.Repository
                             Coursename = (string)reader["Coursename"],
                             Coursedesc = (string)reader["Coursedesc"],
                             CoursePhoto = (byte[])reader["Courseimage"],
-                            Enroll = (string)reader["Enroll"]
+                            Enroll = (string)reader["Enroll"],
+                            CourseType = (string)reader["CourseType"]
                         });
                     }
                     return list;
@@ -674,6 +678,37 @@ namespace OnlineLearningPortal.Repository
                 }
             }
 
+        }
+        public List<UserModel> GetCourseWithUsers(CourseModel course)
+        {
+            List<UserModel> userlist = new List<UserModel>();
+            using (SqlConnection _connection = new SqlConnection("Data Source=SYSLP779\\SQLEXPRESS;database=ClaySys;Integrated Security=SSPI"))
+            {
+                try
+                {
+                    _connection.Open();
+                    SqlCommand _command = new SqlCommand("SPR_GetAllUserByCourse", _connection);
+                    _command.CommandType = CommandType.StoredProcedure;
+                    _command.Parameters.AddWithValue("@courseID", course.CourseID);
+                    SqlDataReader reader = _command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        userlist.Add(new UserModel()
+                        {
+                            Id = (int)reader["UserId"],
+                            UserName = (string)reader["UserName"],
+                            Email = (string)reader["Email"],
+                            PhoneNumber = reader["Mobile"].ToString()
+                        });
+                    }
+                    return userlist;
+
+                }
+                catch (Exception ex)
+                {
+                    return null;
+                }
+            }
         }
     }
 }

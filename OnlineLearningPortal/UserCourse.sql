@@ -30,17 +30,21 @@ begin
 end
 
 select * from UserCourse
-create procedure SPR_GetCourseByUser
-	@UserId int
+
+
+select * from UserCourse
+--All user by course
+create procedure SPR_GetAllUserByCourse
+	@CourseId int
 as
 begin
-	select c.CourseID,c.Coursesrc,c.Coursename,c.CourseCatagory,c.Coursedesc from UserCourse as us full outer join UserDetails as ud on us.UserId=ud.UserId full outer join Courses as c on us.CourseId = c.CourseId where ud.UserId=@UserId
+	select ud.UserId UserId,ud.UserName UserName,ud.Email Email,ud.Mobile Mobile from UserCourse as us full outer join UserDetails as ud on us.UserId=ud.UserId full outer join Courses as c on us.CourseId = c.CourseId where c.CourseID=@CourseId
 end
-exec SPR_GetCourseByUser @UserId=4;
-select * from UserCourse
+
 
 drop procedure SPR_GetCourseByUser
 
+delete from Courses where CourseID=9
 select * from UserDetails
 select * from Courses
 select * from UserCourse
@@ -117,10 +121,43 @@ create procedure SPR_GetCourseByUser
 	@UserId int
 as
 begin
-	select uc.CourseId CourseId,c.Coursename CourseName,c.Courseimage Courseimage,c.Coursedesc Coursedesc,uc.EnrollStatus Enroll from UserCourse uc inner join UserDetails ud on uc.UserId=ud.UserId
+	select uc.CourseId CourseId,c.Coursename CourseName,c.Courseimage Courseimage,c.Coursedesc Coursedesc,uc.EnrollStatus Enroll,c.CourseType CourseType from UserCourse uc inner join UserDetails ud on uc.UserId=ud.UserId
 	inner join Courses c on uc.CourseId=c.CourseID where uc.UserId=@UserId
 end
+
+exec SPR_GetCourseByUser @UserId=5;
 
 exec SPR_GetCourseByUser 2
 
 select * from UserDetails
+
+create table comments(
+	commentId int primary key identity(1,1),
+	CourseId int,
+	UserId int,
+	comment varchar(200),
+	Foreign key (UserId) references UserDetails(UserId),
+	Foreign key (CourseId) references Courses(CourseID)
+)
+create procedure SPI_comment
+	@CourseId int,
+	@UserId int,
+	@comment varchar(200)
+as 
+begin 
+	insert into comments(CourseId,UserId,comment) values(@CourseId,@UserId,@comment)
+end
+
+exec SPI_comment 7,5,'Here I got lot of Knowledge about course'
+
+create procedure SPR_allComments
+	@CourseId int
+as
+begin
+	select * from comments where CourseId =@CourseId
+end
+
+exec SPR_allComments 4
+
+select * from comments
+

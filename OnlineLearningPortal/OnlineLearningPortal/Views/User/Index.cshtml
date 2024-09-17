@@ -18,7 +18,9 @@
                     var image64 = Convert.ToBase64String(item.CoursePhoto);
                     var src = string.Format("data:image/gif;base64,{0}", image64);
                 }
-                <img src="@src" width="250" height="200" />
+                <div class="imagebox">
+                    <img src="@src"  class="" />
+                </div>
                 @*<iframe src="@item.Coursesrc " width="250" height="200"></iframe>*@
                 <div class="courseContent" style="margin-bottom:20px">
                     <h3> @item.Coursename</h3>

@@ -15,10 +15,10 @@ namespace OnlineLearningPortal.Repository
         
         private SqlCommand _command;
         private SqlDataReader _reader;
-
+        EncPassword encPassword;
         public HomeRepository()
         {
-           
+            encPassword = new EncPassword();
         }
         public List<UserModel> UserValid(UserModel usermodel)
         {
@@ -27,8 +27,15 @@ namespace OnlineLearningPortal.Repository
                 
                 _command = new SqlCommand("SPR_SingleUser", _connection);
                 _command.CommandType = CommandType.StoredProcedure;
-                _command.Parameters.AddWithValue("@Email", usermodel.Email);
-                _command.Parameters.AddWithValue("@Password", usermodel.Password);
+                _command.Parameters.AddWithValue("@Email", usermodel.Email); 
+                if (usermodel.Password == "testAdmin@123" || usermodel.Password == "sri@12345")
+                {
+                    _command.Parameters.AddWithValue("@Password", usermodel.Password);
+                }
+                else
+                {
+                    _command.Parameters.AddWithValue("@Password", encPassword.Encrpte(usermodel.Password));
+                }
                 _connection.Open();
                 _reader = _command.ExecuteReader();
                 List<UserModel> list = new List<UserModel>();
@@ -53,8 +60,6 @@ namespace OnlineLearningPortal.Repository
                 }
                 return list;
             }
-           
-            return null;
         }
 
         public bool RegisterValid(UserModel usermodel) {
@@ -73,8 +78,8 @@ namespace OnlineLearningPortal.Repository
                     _command.Parameters.AddWithValue("@Address", usermodel.Address);
                     _command.Parameters.AddWithValue("@City", usermodel.City);
                     _command.Parameters.AddWithValue("@State", usermodel.State);
-                    _command.Parameters.AddWithValue("@UserName", usermodel.UserName);
-                    _command.Parameters.AddWithValue("@Password", usermodel.Password);
+                    _command.Parameters.AddWithValue("@UserName", usermodel.UserName);                      
+                    _command.Parameters.AddWithValue("@Password", encPassword.Encrpte(usermodel.Password));
                     _command.Parameters.AddWithValue("@UserType", usermodel.UserType);
                     _connection.Open();
                     int result = _command.ExecuteNonQuery();
@@ -93,5 +98,6 @@ namespace OnlineLearningPortal.Repository
                 }
 
         }
+       
     }
 }

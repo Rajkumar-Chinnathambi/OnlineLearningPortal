@@ -8,14 +8,18 @@ using System.Web.Mvc;
 
 namespace OnlineLearningPortal.Controllers
 {
+    [Authorize(Roles ="User")]
     public class UserController : Controller
     {
         CourseRepository courseRepository;
+        CommentRepository commentRepository;
         public UserController()
         {
             courseRepository = new CourseRepository();
+            commentRepository = new CommentRepository();
         }
         // GET: User
+       
         public ActionResult Index()
         {
             CourseRepository courseRepository = new CourseRepository();
@@ -25,6 +29,14 @@ namespace OnlineLearningPortal.Controllers
            /* var unenrollcourse = courseRepository.UnEnrollCourse(usermodel);*/
             /*courseList.AddRange(unenrollcourse);*/
             return View(courseList);
+        }
+        public ActionResult About()
+        {
+            return View();
+        }
+        public ActionResult Contact()
+        {
+            return View();
         }
         [HttpGet]
         public ActionResult CourseEnroll(CourseModel course) {
@@ -128,12 +140,32 @@ namespace OnlineLearningPortal.Controllers
         }
         public ActionResult CoursePage(CourseModel courseModel) {            
             var singleCourseDetail = courseRepository.GetCourseById(courseModel);
-            return View(singleCourseDetail);
+            var commentByCourse = commentRepository.GetAllCommentsByCourse(courseModel);
+            commentByCourse.Reverse();
+            CourseCommentModel comment = new CourseCommentModel
+            {
+                Commentmodel = commentByCourse,
+                Coursemodel = singleCourseDetail
+            };
+            return View(comment);
         }
         public ActionResult QuizeView(CourseModel course)
         {
             var allQuizes = courseRepository.GetAllQuize(course);
             return View(allQuizes);
+        }
+
+        public ActionResult SaveComment(CommentModel commentmodel) {
+            int id =(int)Session["UserId"];
+            commentmodel.UserId = id;
+            commentRepository.SaveComment(commentmodel);
+            return Redirect("~/User/CoursePage?courseid="+commentmodel.CourseId);
+        }
+        public ActionResult SaveContactForm(ContactCommentModel contactComment)
+        {
+            commentRepository.SaveContactComment(contactComment);
+            TempData["Message"] = "Successfully Submited";
+            return Redirect("~/Home/Contact");
         }
     }
 }

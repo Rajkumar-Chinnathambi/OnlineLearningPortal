@@ -24,7 +24,7 @@ input {
     background-size: cover;
 }
 
-.form {
+/*.form {
     width: 700px;
     padding: 20px 30px;
     box-shadow: 0 0 18px rgba(0,0,0,0.2), 0 2px 8px rgba(0,0,0,0.1), 0 4px 8px rgba(0,0,0,0.1), 0 6px 8px rgba(0,0,0,0.1);
@@ -90,9 +90,9 @@ input {
 .date-box input,
 #state, #city, .emailBox input, .mobileBox input,
 .usernameBox input, .pwdBox input,#firstName,#lastName
-{
+{*/
     /*height: 35px;*/
-    padding: 8px;
+    /*padding: 8px;
 }
 
     #state, .addressBox input, #city {
@@ -136,5 +136,120 @@ label {
 }
 .date-box, .gender {
     grid-column: span 1;
+}*/
+.form {
+    width: 600px;
+    margin: 50px auto;
+    padding: 20px 30px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.heading {
+    color: #333;
+    font-size: 22px;
+    margin: 10px 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.firstNameBox, .lastNameBox, .usernameBox, .pwdBox, .date-box, .gender-box, .emailBox, .mobileBox, .addressBox, .state-box, .city-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.addressBox, .address-box {
+    grid-column: span 2;
+}
+label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input[type="text"], input[type="password"], input[type="email"], input[type="number"], input[type="date"], select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+    input:focus, select:focus {
+        border-color: #4caf50;
+        outline: none;
+    }
+
+small {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.error {
+    display: block;
+}
+
+.submit-box {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.submitBtn {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+    .submitBtn:hover {
+        background-color: #388e3c;
+    }
+
+.rememberBox {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+    .rememberBox input[type="checkbox"] {
+        margin-right: 10px;
+    }
+
+.account {
+    text-align: center;
+    margin-top: 20px;
+}
+
+    .account a {
+        color: #4caf50;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+        .account a:hover {
+            color: #388e3c;
+        }
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
 }
 

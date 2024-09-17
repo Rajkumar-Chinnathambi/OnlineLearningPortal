@@ -86,6 +86,56 @@ function EmailValid() {
         return true;
     }
 }
+function DobValid() {
+    let dob = document.getElementById("date").value.trim();
+    let dobError = document.getElementById("dateError");
+    console.log(dob)
+    if (dob != '') {
+        dobError.innerText = '';
+        return true;
+    }
+    else {
+        dobError.innerText = 'Select Date of birth';
+        return false;
+    }
+}
+function GenderValid() {
+    let gender = document.getElementById("gender").value.trim();
+    let genderError = document.getElementById("genderError");
+    if (gender != 'Choose Gender') {
+        genderError.innerText = '';
+        return true;
+    }
+    else {
+        genderError.innerText = 'Select Gender';
+        return false;
+    }
+}
+function StateValid() {
+    let state = document.getElementById("state").value.trim();
+    let stateError = document.getElementById("stateError");
+    if (state != 'Choose State') {
+        stateError.innerText = '';
+        return true;
+    }
+    else {
+        stateError.innerText = 'Select State';
+        return false;
+    }
+}
+function CityValid() {
+    let city = document.getElementById("city").value.trim();
+    let cityError = document.getElementById("cityError");
+    if (city != 'Choose City') {
+        cityError.innerText = '';
+        return true;
+    }
+    else {
+        cityError.innerText = 'Select City';
+        cityError.style.color = 'red';
+        return false;
+    }
+}
 function MobileValid() {
     let mobile = document.getElementById("mobile").value.trim();
     let mobileError = document.getElementById("mobileError");
@@ -114,6 +164,21 @@ function AddressValid() {
         return true;
     }
 }
+function togglePassword() {
+    var pwdField = document.getElementById("pwd");
+    var toggleIcon = document.getElementById("togglePwd");
+
+    if (pwdField.type === "password") {
+        pwdField.type = "text";
+        toggleIcon.classList.remove("fa-eye-slash");
+        toggleIcon.classList.add("fa-eye");
+    } else {
+        pwdField.type = "password";
+        toggleIcon.classList.remove("fa-eye");
+        toggleIcon.classList.add("fa-eye-slash");
+        
+    }
+}
 document.getElementById("submitBtn").addEventListener("click", RegisterSubmit)
 function RegisterSubmit(e) {
     e.preventDefault();
@@ -124,8 +189,12 @@ function RegisterSubmit(e) {
     let emailStatus = EmailValid();
     let mobileStatus = MobileValid();
     let addressStatus = AddressValid();
+    let genderStatus = GenderValid();
+    let dobStatus = DobValid();
+    let StateStatus = StateValid();
+    let cityStatus = CityValid();
     let registerForm = document.getElementById('RegisterForm');
-    if (fnameStatus && lastNameStatus && userNameStatus && passwordStatus && emailStatus && mobileStatus && addressStatus) {
+    if (fnameStatus && lastNameStatus && userNameStatus && passwordStatus && emailStatus && mobileStatus && addressStatus && genderStatus && dobStatus && StateStatus && cityStatus) {
         registerForm.setAttribute('action', "Register");
         registerForm.submit();
     }

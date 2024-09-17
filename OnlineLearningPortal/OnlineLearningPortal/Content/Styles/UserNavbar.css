@@ -14,17 +14,47 @@
     padding: 0;
     box-sizing: border-box;
 }
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #e1dbdb;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+    border: 2px solid #e1dbdb;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #e1dbdb;
+}
+
+body {
+    overflow-y: scroll;
+}
+
 .navbar{
     height:70px;
     display:flex;
     justify-content:space-between;
     align-items:center;
     background-color:#e3d3d3;
-    padding:0 50px;
+    padding:0 10px;
+    position:sticky;
+    top:0;
+    z-index:3;
 }
 .logoBox{
     height:100%;
-    padding:10px;
+    padding:10px 0;
 }
 .logoBox img{
     height:100%;
@@ -51,14 +81,72 @@
 .menuItem:hover{
     background-color:#b9acac;
 }
-footer{
-    max-width:95vw;
-}
-.footerSection{
-    padding:20px;
-    background-color:#e1dbdb;/*
-    background-color:red;*/
-    display:block;
-    width:100%;  
-    height:max-content;
-}
+
+ .footerSection {
+     padding:15px 0;
+     background-color: #e1dbdb;
+     font-family: Arial, sans-serif;
+ }
+
+    .footerContainer {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .footerContainer > div {
+        flex: 1;
+        margin: 10px;
+    }
+
+    .quickAccessBox h3, 
+    .footercontactbox h3, 
+    .socialIconBox h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .quickAccessBox ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .quickAccessBox ul li {
+        margin: 5px 0;
+    }
+
+    .quickAccessBox ul li a {
+        text-decoration: none;
+        color: #000;
+    }
+
+    .footercontactbox h2 {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+
+
+    .footerlocation i {
+        margin-right: 10px;
+    }
+
+    .footercontactbox p, 
+    .footerlocation span {
+        margin: 5px 0;
+    }
+
+    .socialIcons a {
+        margin-right: 10px;
+        text-decoration: none;
+        color: #000;
+        font-size: 20px;
+    }
+
+    .socialIcons a:hover {
+        color: #007bff;
+    }
+
+    .footerSection {
+        text-align: center;
+        font-size: 14px;
+    }

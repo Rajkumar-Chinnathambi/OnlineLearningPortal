@@ -126,14 +126,20 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CommentModel.cs" />
+    <Compile Include="Models\ContactCommentModel.cs" />
+    <Compile Include="Models\CourseCommentModel.cs" />
     <Compile Include="Models\CourseModel.cs" />
+    <Compile Include="Models\CourseUsersModel.cs" />
     <Compile Include="Models\PendingCourse.cs" />
     <Compile Include="Models\Quize.cs" />
     <Compile Include="Models\UserCourse.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Models\VideoModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\CommentRepository.cs" />
     <Compile Include="Repository\CourseRepository.cs" />
+    <Compile Include="Repository\EncPassword.cs" />
     <Compile Include="Repository\HomeRepository.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -155,10 +161,12 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Styles\About.css" />
     <Content Include="Content\Styles\AddCourse.css" />
+    <Content Include="Content\Styles\AdminEditUser.css" />
     <Content Include="Content\Styles\AdminLayout.css" />
     <Content Include="Content\Styles\AllUsers.css" />
     <Content Include="Content\Styles\Contact.css" />
     <Content Include="Content\Styles\Course.css" />
+    <Content Include="Content\Styles\CourseDetails.css" />
     <Content Include="Content\Styles\CourseEdit.css" />
     <Content Include="Content\Styles\CoursePage.css" />
     <Content Include="Content\Styles\HomePage.css" />
@@ -168,6 +176,7 @@
     <Content Include="Content\Styles\PaidCourseView.css" />
     <Content Include="Content\Styles\QuizeView.css" />
     <Content Include="Content\Styles\Register.css" />
+    <Content Include="Content\Styles\UserDetailView.css" />
     <Content Include="Content\Styles\UserIndex.css" />
     <Content Include="Content\Styles\UserNavbar.css" />
     <Content Include="Content\Styles\VideoPlayView.css" />
@@ -181,6 +190,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="libman.json" />
+    <Content Include="Content\Json\State.json" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\CreateUser.js" />
     <Content Include="Scripts\EditUser.js" />
@@ -231,9 +241,14 @@
     <Content Include="Views\User\CoursePage.cshtml" />
     <Content Include="Views\User\PaidCourseView.cshtml" />
     <Content Include="Views\User\QuizeView.cshtml" />
+    <Content Include="Views\Admin\CourseDetails.cshtml" />
+    <Content Include="Views\Admin\UserDetailView.cshtml" />
+    <Content Include="Views\User\About.cshtml" />
+    <Content Include="Views\User\Contact.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Comment\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

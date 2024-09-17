@@ -1,0 +1,62 @@
+﻿@model IEnumerable<OnlineLearningPortal.Models.UserModel>
+@{
+    ViewBag.Title = "UserDetailView";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+@Styles.Render("~/Content/Styles/UserDetailView.css")
+<div class="userviewContainer">
+    @foreach (var item in Model)
+    {
+        <div class="userview">
+            <div class="userImageBox">
+                <img src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_640.png" />
+                <h2 class="username">@item.FirstName @item.LastName</h2>
+            </div>
+            <div class="userInfoBox">
+                <div class="userPersonalInfo">
+                    <p>User Info</p>
+                    <div class="userPersonalInfoBox">
+                        <div class="userDOBBox">
+                            <label>User name :</label>
+                            <label class="dob">@item.UserName</label>
+                        </div>
+                        <div class="userDOBBox">
+                            <label>Email :</label>
+                            <label class="dob">@item.Email</label>
+                        </div>
+                        <div class="userDOBBox">
+                            <label>Gender :</label>
+                            <label class="dob">@item.Gender</label>
+                        </div>
+                        <div class="userDOBBox">
+                            <label>Date of Birth :</label>
+                            <label class="dob">@item.DOB</label>
+                        </div>
+                        <div class="userDOBBox">
+                            <label>Mobile :</label>
+                            <label class="dob">@item.PhoneNumber</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="userAddressInfo userPersonalInfo">
+                    <p>Address Info:</p>
+                    <div class="userPersonalInfoBox">
+                        <div class="addressBox">
+                            <label>Address : </label>
+                            <label class="address">@item.Address</label>
+                        </div>
+                        <div class="addressBox">
+                            <label>City : </label>
+                            <label class="address">@item.City</label>
+                        </div>
+                        <div class="addressBox">
+                            <label>State : </label>
+                            <label class="address">@item.State</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
