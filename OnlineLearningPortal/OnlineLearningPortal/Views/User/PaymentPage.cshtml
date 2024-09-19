@@ -1,0 +1,99 @@
+﻿@model  IEnumerable<OnlineLearningPortal.Models.CourseModel>
+@{
+    ViewBag.Title = "PaymentPage";
+    Layout = "~/Views/Shared/LogUserLayout.cshtml";
+}
+@Styles.Render("~/Content/Styles/PaymentPage.css")
+@if (TempData["PaymentStatus"] != null)
+{
+    <script>alert("@TempData["PaymentStatus"]")</script>
+}
+<style>
+    .SubmitBtn {
+        border-radius: 5px;
+        color: white;
+        border: none;
+        outline: none;
+        padding: 8px 18px;
+        background-color: green;
+    }
+</style>
+<div class="paymentContainer">
+    <h2>PaymentPage</h2>
+    @foreach (var item in Model)
+    {
+        <h1 style="text-align:left">@item.Coursename</h1>
+    }
+    <p style="font-size:20px;">Payment Amount : $100</p>
+    <form action="~/User/Payment" method="post">
+        <div class="payment-container">
+            <h2>Choose Payment Method</h2>
+            @foreach (var item in Model)
+            {
+                <input hidden value="@item.CourseID" name="CourseId">
+            }
+            <div class="payment-options">
+                <div class="payment-option"><input type="radio" name="PaymentMode" value="credite" />Credit Card</div>
+                <div class="payment-option"><input type="radio" name="PaymentMode" value="upi" />UPI</div>
+                <div class="payment-option"><input type="radio" name="PaymentMode" value="onlinebank" />Online Banking</div>
+                <div><input class="SubmitBtn" type="submit" value="Submit" /></div>
+            </div>
+
+            <!--<div id="credit-card" class="payment-form">
+                <h3>Credit Card Payment</h3>
+                <div class="input-group">
+                    <label for="cardholder">Cardholder Name</label>
+                    <input type="text" id="cardholder" name="cardholder" required>
+                </div>
+                <div class="input-group">
+                    <label for="cardnumber">Card Number</label>
+                    <input type="text" id="cardnumber" name="cardnumber" required>
+                </div>
+                <div class="input-group">
+                    <label for="expiry">Expiry Date</label>
+                    <input type="text" id="expiry" name="expiry" required>
+                </div>
+                <div class="input-group">
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" name="cvv" required>
+                </div>
+                <button type="submit" class="submit-btn">Pay with Credit Card</button>
+            </div>
+
+            <div id="upi" class="payment-form">
+                <h3>UPI Payment</h3>-->
+                @*<div class="input-group">
+                        <label for="upi-id">UPI ID</label>
+                        <input type="text" id="upi-id" name="upi-id" required>
+                    </div>*@
+                <!--<div class="qr-code">
+                    <p>Scan to Pay</p>
+                    <img src="https://pngimg.com/d/qr_code_PNG33.png" alt="UPI QR Code">
+                </div>
+                <button type="submit" class="submit-btn">Pay with UPI</button>
+            </div>
+
+            <div id="online-banking" class="payment-form">
+                <h3>Online Banking Payment</h3>
+                <div class="input-group">
+                    <label for="bank">Choose Bank</label>
+                    <select id="bank" name="bank" required>
+                        <option value="bank1">Indian Bank</option>
+                        <option value="bank2">SBI</option>
+                        <option value="bank3">HDFC</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">Pay with Online Banking</button>
+            </div>-->
+        </div>
+    </form>
+</div>
+<script>
+    function showForm(method) {
+        document.querySelectorAll('.payment-form').forEach(function (form) {
+            form.classList.remove('active');
+        });
+        document.getElementById(method).classList.add('active');
+    }
+</script>
+

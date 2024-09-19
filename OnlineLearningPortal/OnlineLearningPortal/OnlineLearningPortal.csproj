@@ -131,9 +131,11 @@
     <Compile Include="Models\CourseCommentModel.cs" />
     <Compile Include="Models\CourseModel.cs" />
     <Compile Include="Models\CourseUsersModel.cs" />
+    <Compile Include="Models\PaymentModel.cs" />
     <Compile Include="Models\PendingCourse.cs" />
     <Compile Include="Models\Quize.cs" />
     <Compile Include="Models\UserCourse.cs" />
+    <Compile Include="Models\UserCoursesModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Models\VideoModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -174,6 +176,7 @@
     <Content Include="Content\Styles\LogUserNavbar.css" />
     <Content Include="Content\Styles\MyCourse.css" />
     <Content Include="Content\Styles\PaidCourseView.css" />
+    <Content Include="Content\Styles\PaymentPage.css" />
     <Content Include="Content\Styles\QuizeView.css" />
     <Content Include="Content\Styles\Register.css" />
     <Content Include="Content\Styles\UserDetailView.css" />
@@ -207,6 +210,7 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\Register.js" />
     <Content Include="Scripts\Script\AddCourse.js" />
+    <Content Include="Scripts\Script\ContactForm.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -245,6 +249,8 @@
     <Content Include="Views\Admin\UserDetailView.cshtml" />
     <Content Include="Views\User\About.cshtml" />
     <Content Include="Views\User\Contact.cshtml" />
+    <Content Include="Views\User\PaymentPage.cshtml" />
+    <Content Include="Views\Admin\AllPayments.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

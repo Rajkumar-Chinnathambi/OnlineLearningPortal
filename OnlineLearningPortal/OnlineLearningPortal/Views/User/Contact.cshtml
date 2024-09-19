@@ -27,26 +27,31 @@
         </div>
 
         <div class="ContactFormContainer">
-            <form class="contactFormBox" action="~/User/SaveContactForm" method="post">
+            <form class="contactFormBox" action="~/Home/SaveContactForm" method="post">
                 <h2>Contact Form</h2>
                 <div class="flex">
                     <label>Name</label>
-                    <input type="text" name="Name" />
+                    <input type="text" id="name" name="Name" onblur="namevalid()" required/>
+                    <small class="error" id="nameError"></small>
                 </div>
                 <div class="flex">
                     <label>Email</label>
-                    <input type="text"  name="Email"/>
+                    <input type="text" id="email" name="Email"  required/>
+                    <small class="error" id="emailError"></small>
                 </div>
                 <div class="flex">
                     <label>Country</label>
-                    <input type="text" name="Country"/>
+                    <input type="text" id="country" name="Country" required/>
+                    <small class="error" id="countryError"></small>
                 </div>
                 <div class="flex">
                     <label>Message</label>
-                    <textarea type="text" name="Message"></textarea>
+                    <textarea type="text" id="message" name="Message" required></textarea>
+                    <small class="error" id="messageError"></small>
                 </div>
                 <button>Submit</button>
             </form>
         </div>
     </div>
 </main>
+@Scripts.Render("~/Scripts/Script/ContactForm.js")

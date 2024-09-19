@@ -1,0 +1,87 @@
+﻿@model IEnumerable<OnlineLearningPortal.Models.PaymentModel>
+
+@{
+    ViewBag.Title = "AllPayments";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<style>
+    .paymentContainer {
+        margin: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        display: flex;
+        justify-content: center;
+        flex-direction:column;
+        width: calc(98vw - 280px);
+    }
+    .paymentContainer h2{
+        padding:10px 0;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+    }
+
+    table th, table td {
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+
+    table th {
+        background-color: #4CAF50;
+        color: #ffffff;
+    }
+
+    table tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    table tr:hover {
+        background-color: #ddd;
+    }
+</style>
+
+
+<div class="paymentContainer">
+    <h2>All Payments</h2>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Username)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Coursename)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.paymentMode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreateAt)
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Username)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Coursename)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.paymentMode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreateAt)
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

@@ -101,6 +101,13 @@ namespace OnlineLearningPortal.Controllers
             string jsonData = System.IO.File.ReadAllText(filePath);            
             return Content(jsonData, "application/json");
         }
+        public ActionResult SaveContactForm(ContactCommentModel contactComment)
+        {
+            CommentRepository commentRepository = new CommentRepository();
+            commentRepository.SaveContactComment(contactComment);
+            TempData["Message"] = "Successfully Submited";
+            return Redirect("~/Home/Contact");
+        }
         public ActionResult GetUserByUsername(string username)
         {
 

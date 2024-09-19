@@ -12,5 +12,7 @@ namespace OnlineLearningPortal.Models
         public int CourseId { get;set; }
         public string CourseName { get; set; }
         public string UserName { get; set; }
+        public string CourseType { get; set; }
+        public string EnrollStatus { get; set; }
     }
 }

@@ -17,19 +17,19 @@
         <div class="personal-info">
             <div class="grid" style="margin-bottom:20px;">
                 <div class="firstNameBox">
-                    <label asp-for="FirstName">First Name</label>
+                    <label asp-for="FirstName">First name</label>
                     <input type="text" value="" id="firstName" name="FirstName" onblur="FirstNameValid()" />
                     <small id="firstNameError" class="error"></small>
                 </div>
                 <div class="lastNameBox">
-                    <label>Last Name</label>
+                    <label>Last name</label>
                     <input type="text" value="" id="lastName" name="LastName" onblur="LastNameValid()" />
                     <small id="lastNameError" class="error"></small>
                 </div>
             </div>
             <div class="grid">
                 <div class="usernameBox">
-                    <label>User Name</label>
+                    <label>Username</label>
                     <input type="text" value="" id="userName" name="UserName" onblur="UserNameValid()" />
                     <small id="userNameError" class="error"></small>
                 </div>
@@ -40,7 +40,7 @@
                     <i class="fas fa-eye-slash" id="togglePwd" style="position: absolute; right: 10px; top: 40px; cursor: pointer;" onclick="togglePassword()"></i>
                 </div>
                 <div class="date-box">
-                    <label>Date of Birth</label>
+                    <label>Date of birth</label>
                     <input type="date" value="" max="2006-05-05" id="date" name="DOB" required onblur="DobValid()" />
                     <small id="dateError"></small>
                 </div>
@@ -91,17 +91,21 @@
         </div>
         <div class="rememberBox">
             <input type="checkbox" id="remember" />
-            <label for="remember">Remember Me</label>
+            <label for="remember" >Remember me</label>
         </div>
         <div class="submit-box">
-            <input type="submit" id="submitBtn" class="submitBtn" value="Register" />
+            <input type="submit" id="submitBtn" class="submitBtn" value="Sign up" />
         </div>
         <div class="account">
-            If already have an account? <a href="Index">Login</a>
+            If already have an account? <a href="Index">Sign in</a>
         </div>
     </form>
 </div>
-
+<script>
+    let time = new Date()
+    let year = time.getFullYear() - 18;
+    document.getElementById('date').setAttribute('max', `${year}-02-02`)
+</script>
 @Scripts.Render("~/Scripts/Register.js")
 <script src="~/Scripts/jquery-3.7.0.min.js"></script>
 <script>

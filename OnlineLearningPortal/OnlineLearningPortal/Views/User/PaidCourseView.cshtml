@@ -4,6 +4,7 @@
     Layout = "~/Views/Shared/LogUserLayout.cshtml";
 }
 @Styles.Render("~/Content/Styles/PaidCourseView.css")
+
 <div class="paidCourseContainer">
     @foreach (var item in Model)
     {
@@ -25,7 +26,7 @@
             
             </div>
             <div class="buyBtnBox">
-                <a href="#" class="buyBtn">Buy</a>
+                <a href="~/User/PaymentPage?CourseID=@item.CourseID" class="buyBtn">Buy</a>
             </div>
         </div>
     }

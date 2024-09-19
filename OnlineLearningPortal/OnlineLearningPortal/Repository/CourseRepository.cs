@@ -99,6 +99,7 @@ namespace OnlineLearningPortal.Repository
                             Coursedesc = (string)reader["Coursedesc"],
                             CoursePhoto = (byte[])reader["Courseimage"],
                             CourseType=(string)reader["CourseType"],
+                            Enroll=(string)reader["CourseType"],
                         });
                     }
                     return list;
@@ -390,7 +391,7 @@ namespace OnlineLearningPortal.Repository
                         }
                         else
                         {
-                            return "Something errror,try again";
+                            return "Something error,try again";
                         }
                    
                     }
@@ -449,7 +450,8 @@ namespace OnlineLearningPortal.Repository
                             Coursedesc = (string)reader["Coursedesc"],
                             CoursePhoto = (byte[])reader["Courseimage"],
                             Enroll = (string)reader["Enroll"],
-                            CourseType = (string)reader["CourseType"]
+                            CourseType = (string)reader["CourseType"],
+                            CourseCatagory= (string)reader["CourseCatagory"]
                         });
                     }
                     return list;
@@ -595,7 +597,9 @@ namespace OnlineLearningPortal.Repository
                             UserId = (int)reader["UserId"],
                             CourseId = (int)reader["CourseId"],
                             UserName= (string)reader["UserName"],
-                            CourseName = (string)reader["CourseName"]
+                            CourseName = (string)reader["CourseName"],
+                            EnrollStatus = (string)reader["EnrollStatus"],
+                            CourseType = (string)reader["CourseType"]
                         });
                     }
                     return list;
@@ -708,6 +712,82 @@ namespace OnlineLearningPortal.Repository
                 {
                     return null;
                 }
+            }
+        }
+        public bool SavePayment(PaymentModel payment)
+        {
+            try
+            {
+                using (SqlConnection _connection = new SqlConnection(connectionString))
+                {
+                    _connection.Open();
+                    SqlCommand cmd = new SqlCommand("SPI_Payement", _connection);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@courseId", payment.CourseId);
+                    cmd.Parameters.AddWithValue("@userId", payment.UserId);
+                    cmd.Parameters.AddWithValue("@paymentMode", payment.paymentMode);
+                    int result = cmd.ExecuteNonQuery();
+                    return result > 0;
+                }
+            }
+            catch { 
+                return false;
+            }
+        }
+
+        public PaymentModel GetPaymentByUserCourse(PaymentModel payment) {
+            try
+            {
+                using (SqlConnection _connection = new SqlConnection(connectionString))
+                {
+                    _connection.Open();
+                    SqlCommand cmd = new SqlCommand("GetPaymentByUserCourse", _connection);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@courseId", payment.CourseId);
+                    cmd.Parameters.AddWithValue("@userId", payment.UserId);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read()) {
+                        payment.CourseId = (int)reader["courseId"];
+                        payment.UserId = (int)reader["userId"];
+                        payment.PaymentId = (int)reader["paymentMode"];
+                        payment.CreateAt = (DateTime)reader["createAt"];
+                    }
+                    return payment;
+                }
+            }
+            catch
+            {
+                return null;
+            } 
+        }
+        public List<PaymentModel> GetAllPaymentList() {
+            try
+            {
+                using (SqlConnection _connection = new SqlConnection(connectionString))
+                {
+                    List<PaymentModel> paymentList= new List<PaymentModel>();
+                    _connection.Open();
+                    SqlCommand cmd = new SqlCommand("GetAllPayments", _connection);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        paymentList.Add(new PaymentModel
+                        {
+                            CourseId = (int)reader["courseId"],
+                            UserId = (int)reader["userId"],
+                            paymentMode = (string)reader["paymentMode"],
+                            CreateAt = (DateTime)reader["createAt"],
+                            Username = (string)reader["UserName"],
+                            Coursename = (string)reader["Coursename"],
+                        });
+                    }
+                    return paymentList;
+                }
+            }
+            catch(Exception ex) 
+            {
+                return null;
             }
         }
     }

@@ -4,13 +4,23 @@
     Layout = "~/Views/Shared/LogUserLayout.cshtml";
 }
 @Styles.Render("~/Content/Styles/VideoPlayView.css")
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+@if (TempData["Result"] != null) { 
+    <script>
+        Swal.fire({
+            title: "Good job!",
+            text: "@TempData["Result"]",
+            icon: "success"
+        });
+    </script>
+}
 <div class="VideoPlayContainer">
     @foreach (var item in Model)
     {
         
             <div class="course">
                 <h3 class="courseHeading">@item.Coursename</h3>
+                <p style="padding:10px 0;margin-bottom:20px;">Course type : @item.CourseType</p>
                 @{
                     if (item.Enroll == "Pending")
                     {
@@ -18,7 +28,7 @@
                     }
                     else if (item.Enroll == "Reject")
                     {
-                        <a href="#" style="background-color:gray;color:white;cursor:not-allowed" class="enrollBtn" disbled>Reject</a>
+                        <a href="#" style="background-color:gray;color:white;cursor:not-allowed" class="enrollBtn" disbled>Waiting for admin approve</a>
                     }
                     else if (item.Enroll == "Approved")
                     {
@@ -26,7 +36,7 @@
                     }
                     else
                     {
-                        <a href="~/User/CourseEnroll?CourseID=@item.CourseID" class="enrollBtn">@item.Enroll</a>
+                        <a href="~/User/CourseEnroll?CourseID=@item.CourseID" class="enrollBtn">Enroll</a>
                     }
                 }
                 <p class="enrolledCount">190009 alread enrolled</p>

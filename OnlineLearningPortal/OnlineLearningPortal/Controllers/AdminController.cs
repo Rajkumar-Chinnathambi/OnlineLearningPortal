@@ -154,7 +154,19 @@ namespace OnlineLearningPortal.Controllers
         public ActionResult UserDetailView(UserModel user)
         {
             var singleUser = courseRepository.GetSingleUser(user);
-            return View(singleUser);
+            var usercourses = courseRepository.GetCourseByUser(user);
+
+            UserCoursesModel userCourses = new UserCoursesModel()
+            {
+                Users = singleUser,
+                Courses= usercourses
+            };
+            return View(userCourses);
+        }
+        public ActionResult AllPayments()
+        {
+            var paymentList = courseRepository.GetAllPaymentList();
+            return View(paymentList); 
         }
     }
 }

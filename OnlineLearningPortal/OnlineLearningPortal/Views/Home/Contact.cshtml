@@ -27,23 +27,23 @@
         </div>
 
         <div class="ContactFormContainer">
-            <form class="contactFormBox" action="~/User/SaveContactForm" method="post">
+            <form class="contactFormBox" action="~/Home/SaveContactForm" method="post">
                 <h2>Contact Form</h2>
                 <div class="flex">
                     <label>Name</label>
-                    <input type="text" name="Name" />
+                    <input type="text" name="Name" required/>
                 </div>
                 <div class="flex">
                     <label>Email</label>
-                    <input type="text"  name="Email"/>
+                    <input type="text"  name="Email" required/>
                 </div>
                 <div class="flex">
                     <label>Country</label>
-                    <input type="text" name="Country"/>
+                    <input type="text" name="Country" required/>
                 </div>
                 <div class="flex">
                     <label>Message</label>
-                    <textarea type="text" name="Message"></textarea>
+                    <textarea type="text" name="Message" required></textarea>
                 </div>
                 <button>Submit</button>
             </form>

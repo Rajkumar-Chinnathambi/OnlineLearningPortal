@@ -1,11 +1,12 @@
-﻿@model IEnumerable<OnlineLearningPortal.Models.UserModel>
+﻿@model OnlineLearningPortal.Models.UserCoursesModel
 @{
     ViewBag.Title = "UserDetailView";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 @Styles.Render("~/Content/Styles/UserDetailView.css")
+@Styles.Render("~/Content/Styles/Course.css")
 <div class="userviewContainer">
-    @foreach (var item in Model)
+    @foreach (var item in Model.Users)
     {
         <div class="userview">
             <div class="userImageBox">
@@ -58,5 +59,44 @@
             </div>
         </div>
     }
-</div>
+    <div>
+        <div class="createBtnBox">
+            <h2>Courses</h2>
+        </div>
+        <table >
+            <tr>
+                <th>Course</th>
+                <th>Course Name</th>
+                <th>Course Catagroy</th>
+                <th>Course Desc</th>
+                <th>Enroll Status</th>
+            </tr>
+            @foreach (var item in Model.Courses)
+            {
+                <tr>
+                    <td>
+                        @{
+                            var image64 = Convert.ToBase64String(item.CoursePhoto);
+                            var src = string.Format("data:image/gif;base64,{0}", image64);
+                        }
+                        <img src="@src" class="courseImage" width="100" height="50" />
+                        @*<iframe width="100" height="50" src="@item.Coursesrc"></iframe>*@
+                    </td>
+                    <td>@item.Coursename</td>
+                    <td>@item.CourseCatagory</td>
+                    <td>@item.Coursedesc</td>
+                    @if (item.Enroll=="Reject") {                     
+                        <td>Waiting List</td>
+                    }
+                    else
+                    {
+                        <td>@item.Enroll</td>
+                    }
+            
 
+                </tr>
+
+            }
+        </table>
+    </div>
+</div>

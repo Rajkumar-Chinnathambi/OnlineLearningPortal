@@ -25,9 +25,7 @@ namespace OnlineLearningPortal.Controllers
             CourseRepository courseRepository = new CourseRepository();
             UserModel usermodel = new UserModel();
             usermodel.Id = (int)Session["UserId"];
-            var courseList = courseRepository.GetAllCourses();
-           /* var unenrollcourse = courseRepository.UnEnrollCourse(usermodel);*/
-            /*courseList.AddRange(unenrollcourse);*/
+            var courseList = courseRepository.GetAllCourses();           
             return View(courseList);
         }
         public ActionResult About()
@@ -50,7 +48,7 @@ namespace OnlineLearningPortal.Controllers
                     usermodel.Id = (int)Session["UserId"];
                     var result = courseRepository.CourseEnroll(usermodel, course);
                     TempData["Result"] = result;
-                    return Redirect("~/User/Index");
+                    return RedirectToAction("VideoPlayView","User" ,new { CourseID = course.CourseID });
                 }
                 else
                 {
@@ -80,35 +78,12 @@ namespace OnlineLearningPortal.Controllers
             CourseRepository courseRepository = new CourseRepository();
             UserModel usermodel = new UserModel();
             usermodel.Id =(int)Session["UserId"];
-            var list = courseRepository.IsUserCourseEnroll(usermodel, coursemodel);
-            var enrollStatus = "Enroll";
+            var list = courseRepository.IsUserCourseEnroll(usermodel, coursemodel);           
+            var singleCourse = courseRepository.GetCourseById(coursemodel);
             if (list != null)
             {
-                if (list.EnrollStatus == "Start")
-                {
-                    enrollStatus = "Enroll";
-
-                }
-                else if(list.EnrollStatus == "Pending")
-                {
-                    enrollStatus = "Pending";
-                }
-                else  if( list.EnrollStatus == "Reject")
-                {
-                    enrollStatus = "Reject";
-                }
-                else
-                {
-                    enrollStatus = "Approved";
-                }
-                
+                singleCourse[0].Enroll=list.EnrollStatus;
             }
-            else
-            {
-                enrollStatus = "Enroll";
-            }
-            var singleCourse = courseRepository.GetCourseById(coursemodel);
-            singleCourse[0].Enroll=enrollStatus;
             return View(singleCourse);
         }
         public ActionResult DeleteMyCourse(CourseModel coursemodel) {
@@ -119,7 +94,7 @@ namespace OnlineLearningPortal.Controllers
             TempData["Message"] = singleCourse;
             return Redirect("~/User/MyCourse");
         }
-
+        
         public ActionResult videoGetView()
         {
             CourseRepository courseRepository = new CourseRepository();
@@ -161,11 +136,32 @@ namespace OnlineLearningPortal.Controllers
             commentRepository.SaveComment(commentmodel);
             return Redirect("~/User/CoursePage?courseid="+commentmodel.CourseId);
         }
-        public ActionResult SaveContactForm(ContactCommentModel contactComment)
+       
+        public ActionResult PaymentPage(CourseModel courseModel)
         {
-            commentRepository.SaveContactComment(contactComment);
-            TempData["Message"] = "Successfully Submited";
-            return Redirect("~/Home/Contact");
+            
+            return View(courseRepository.GetCourseById(courseModel));
+        }
+        [HttpPost]
+        public ActionResult Payment(PaymentModel payment) { 
+            payment.UserId = (int)Session["UserId"];
+            var result = courseRepository.SavePayment(payment);
+            if (result)
+            {
+                TempData["PaymentStatus"] = "Paid Successfully";
+                UserModel usermodel = new UserModel();
+                usermodel.Id = (int)Session["UserId"];
+                CourseModel course = new CourseModel();
+                course.CourseID = payment.CourseId;
+                string enrollStatus = courseRepository.CourseEnroll(usermodel, course);
+                TempData["Result"] = enrollStatus;
+                return RedirectToAction("VideoPlayView", "User", new { CourseID = course.CourseID });
+            }
+            else
+            {
+                TempData["PaymentStatus"] = "Something error,try again";
+            }
+            return RedirectToAction("PaymentPage", "User", new {CourseId=payment.CourseId});
         }
     }
 }

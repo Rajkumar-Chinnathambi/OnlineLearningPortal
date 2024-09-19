@@ -12,12 +12,12 @@
     
 }
 .aboutContent h2{
-    color:sandybrown;
     font-size:30px;
-    font-weight:800;
+    font-weight:700;
 }
 .aboutContent p{
     font-size:16px;
+    text-align:justify;
 }
 .AboutImageBox{
      width:40%;

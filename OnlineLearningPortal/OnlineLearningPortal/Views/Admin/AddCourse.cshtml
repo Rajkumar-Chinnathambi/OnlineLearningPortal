@@ -10,7 +10,14 @@
         <h1>Add Course</h1>
         @if (ViewBag.Message != null)
         {
-            <small>@ViewBag.Message</small>
+            if (ViewBag.Message == "Successfully Added")
+            {
+                <small style="color:green;font-size:16px;">@ViewBag.Message</small>
+            }
+            else
+            {
+                <small style="color:red;font-size:16px;">@ViewBag.Message</small>
+            }
         }
         <div class="inputGroup">
             <label>Course Name</label><br />

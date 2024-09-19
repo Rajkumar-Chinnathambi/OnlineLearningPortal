@@ -1,4 +1,4 @@
-﻿/* Apply general styles to the form container */
+﻿
 form {
     width: 450px;
     margin: 0 auto;
@@ -9,14 +9,14 @@ form {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Style the form header */
+
 h1 {
     font-size: 24px;
     margin-bottom: 20px;
     color: #333;
 }
 
-/* Style labels */
+
 label {
     display: block;
     font-weight: bold;
@@ -36,20 +36,19 @@ textarea {
     margin-bottom: 15px;
 }
 
-/* Style the textarea specifically */
+
 textarea {
     resize: vertical;
     min-height: 100px;
 }
 
-/* Style the error messages */
+
 small {
     color: red;
     display: block;
     margin-top: 5px;
 }
 
-/* Style the submit button */
 button[type="submit"] {
     padding: 10px 15px;
     border: none;
@@ -64,7 +63,7 @@ button[type="submit"]:hover {
     background-color: #0056b3;
 }
 
-/* Style the back link */
+
 .backBtn {
     display: inline-block;
     margin-top: 20px;
