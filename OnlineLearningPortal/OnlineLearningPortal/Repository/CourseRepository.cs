@@ -402,35 +402,7 @@ namespace OnlineLearningPortal.Repository
                 }
             }
         }
-        /*public CourseModel GetCourseById(CourseModel coursemodel) {
-            using (SqlConnection _connection = new SqlConnection("Data Source=SYSLP779\\SQLEXPRESS;database=ClaySys;Integrated Security=SSPI"))
-            {
-                try
-                {
-                    _connection.Open();
-                    SqlCommand _command = new SqlCommand("SPR_GetCourseById", _connection);
-                    _command.CommandType = CommandType.StoredProcedure;
-                    _command.Parameters.AddWithValue("@CourseId", coursemodel.CourseID);
-                    SqlDataReader rd = _command.ExecuteReader();
-                    while (rd.Read()) {
-                        return new CourseModel()
-                        {
-                            CourseID = (int)rd["CourseID"],
-                            CourseCatagory = (string)rd["CourseCatagory"],
-                            Coursename = (string)rd["Coursename"],
-                            Coursesrc = (string)rd["Coursesrc"],
-                            Coursedesc = (string)rd["Coursedesc"],
-                            CoursePhoto = (byte[])rd["CoursePhoto"],
-                            CourseType = (string)rd["CourseType"]
-                        };
-                    }
-                    return null;
-                }
-                catch (Exception ex) {
-                    return null;
-                }
-            }
-        }*/
+        
         public List<CourseModel> GetCourseByUser(UserModel usermodel) {
             List<CourseModel> list = new List<CourseModel>();
             using (SqlConnection _connection = new SqlConnection("Data Source=SYSLP779\\SQLEXPRESS;database=ClaySys;Integrated Security=SSPI"))

@@ -211,6 +211,7 @@
     <Content Include="Scripts\Register.js" />
     <Content Include="Scripts\Script\AddCourse.js" />
     <Content Include="Scripts\Script\ContactForm.js" />
+    <Content Include="Views\Home\footer.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -251,6 +252,7 @@
     <Content Include="Views\User\Contact.cshtml" />
     <Content Include="Views\User\PaymentPage.cshtml" />
     <Content Include="Views\Admin\AllPayments.cshtml" />
+    <Content Include="Views\Shared\Footer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

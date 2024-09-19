@@ -3,11 +3,71 @@
   "WorkspaceRootPath": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\onlinelearningportal\\content\\styles\\register.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "AbsoluteMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|c:\\users\\admin\\desktop\\onlinelearningportal\\onlinelearningportal\\onlinelearningportal\\content\\styles\\logusernavbar.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|solutionrelative:onlinelearningportal\\content\\styles\\logusernavbar.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|c:\\users\\admin\\desktop\\onlinelearningportal\\onlinelearningportal\\onlinelearningportal\\views\\shared\\loguserlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|solutionrelative:onlinelearningportal\\views\\shared\\loguserlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\onlinelearningportal\\content\\styles\\usernavbar.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|solutionrelative:onlinelearningportal\\content\\styles\\usernavbar.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|c:\\users\\admin\\desktop\\onlinelearningportal\\onlinelearningportal\\onlinelearningportal\\content\\styles\\homepage.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|solutionrelative:onlinelearningportal\\content\\styles\\homepage.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|c:\\users\\admin\\desktop\\onlinelearningportal\\onlinelearningportal\\onlinelearningportal\\views\\shared\\footer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|solutionrelative:onlinelearningportal\\views\\shared\\footer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|c:\\users\\admin\\desktop\\onlinelearningportal\\onlinelearningportal\\onlinelearningportal\\views\\shared\\userlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|solutionrelative:onlinelearningportal\\views\\shared\\userlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\onlinelearningportal\\views\\user\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|solutionrelative:onlinelearningportal\\views\\user\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|c:\\users\\admin\\desktop\\onlinelearningportal\\onlinelearningportal\\onlinelearningportal\\views\\home\\footer.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|solutionrelative:onlinelearningportal\\views\\home\\footer.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\onlinelearningportal\\views\\shared\\adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|solutionrelative:onlinelearningportal\\views\\shared\\adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|c:\\users\\admin\\desktop\\onlinelearningportal\\onlinelearningportal\\onlinelearningportal\\views\\home\\homepage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|solutionrelative:onlinelearningportal\\views\\home\\homepage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\onlinelearningportal\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|solutionrelative:onlinelearningportal\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\onlinelearningportal\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|solutionrelative:onlinelearningportal\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\onlinelearningportal\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|solutionrelative:onlinelearningportal\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\onlinelearningportal\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|solutionrelative:onlinelearningportal\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\onlinelearningportal\\repository\\courserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|solutionrelative:onlinelearningportal\\repository\\courserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|c:\\users\\admin\\desktop\\onlinelearningportal\\onlinelearningportal\\onlinelearningportal\\content\\styles\\register.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|solutionrelative:onlinelearningportal\\content\\styles\\register.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|c:\\users\\admin\\desktop\\onlinelearningportal\\onlinelearningportal\\onlinelearningportal\\content\\styles\\course.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "AbsoluteMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\onlinelearningportal\\content\\styles\\course.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|solutionrelative:onlinelearningportal\\content\\styles\\course.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
@@ -17,10 +77,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\onlinelearningportal\\content\\styles\\about.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|solutionrelative:onlinelearningportal\\content\\styles\\about.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\onlinelearningportal\\content\\styles\\usernavbar.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|solutionrelative:onlinelearningportal\\content\\styles\\usernavbar.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\onlinelearningportal\\content\\styles\\userdetailview.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
@@ -41,26 +97,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\onlinelearningportal\\views\\home\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|solutionrelative:onlinelearningportal\\views\\home\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\onlinelearningportal\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|solutionrelative:onlinelearningportal\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\onlinelearningportal\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|solutionrelative:onlinelearningportal\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\onlinelearningportal\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|solutionrelative:onlinelearningportal\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\onlinelearningportal\\views\\user\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|solutionrelative:onlinelearningportal\\views\\user\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\onlinelearningportal\\repository\\courserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|solutionrelative:onlinelearningportal\\repository\\courserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\onlinelearningportal\\views\\admin\\allpayments.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -87,16 +123,8 @@
       "RelativeMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|solutionrelative:onlinelearningportal\\scripts\\createuser.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\onlinelearningportal\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|solutionrelative:onlinelearningportal\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\onlinelearningportal\\views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|solutionrelative:onlinelearningportal\\views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\onlinelearningportal\\views\\shared\\adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|solutionrelative:onlinelearningportal\\views\\shared\\adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D13D03DB-4AEE-4148-BB8E-23AB437DB024}|OnlineLearningPortal\\OnlineLearningPortal.csproj|C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\onlinelearningportal\\views\\admin\\courseapproval.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -134,24 +162,25 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "AdminController.cs",
               "DocumentMoniker": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Controllers\\AdminController.cs",
               "RelativeDocumentMoniker": "OnlineLearningPortal\\Controllers\\AdminController.cs",
               "ToolTip": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Controllers\\AdminController.cs",
               "RelativeToolTip": "OnlineLearningPortal\\Controllers\\AdminController.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAQwBcAAABBAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAABBAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-18T07:34:37.991Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 31,
               "Title": "CourseApproval.cshtml",
               "DocumentMoniker": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Views\\Admin\\CourseApproval.cshtml",
               "RelativeDocumentMoniker": "OnlineLearningPortal\\Views\\Admin\\CourseApproval.cshtml",
@@ -164,7 +193,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 35,
               "Title": "UserDetailView.cshtml",
               "DocumentMoniker": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Views\\Admin\\UserDetailView.cshtml",
               "RelativeDocumentMoniker": "OnlineLearningPortal\\Views\\Admin\\UserDetailView.cshtml",
@@ -177,20 +206,21 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "OnlineLearningPortal\\Controllers\\UserController.cs",
               "ToolTip": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Controllers\\UserController.cs",
               "RelativeToolTip": "OnlineLearningPortal\\Controllers\\UserController.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAgwBsAAABJAAAA",
+              "ViewState": "AQIAACAAAAAAAAAAAAAwwBsAAABJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-18T13:52:25.241Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 28,
               "Title": "CreateUser.cshtml",
               "DocumentMoniker": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Views\\Admin\\CreateUser.cshtml",
               "RelativeDocumentMoniker": "OnlineLearningPortal\\Views\\Admin\\CreateUser.cshtml",
@@ -203,7 +233,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 29,
               "Title": "CreateUser.js",
               "DocumentMoniker": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Scripts\\CreateUser.js",
               "RelativeDocumentMoniker": "OnlineLearningPortal\\Scripts\\CreateUser.js",
@@ -215,37 +245,129 @@
               "IsPinned": true
             },
             {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LogUserNavbar.css",
+              "DocumentMoniker": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Content\\Styles\\LogUserNavbar.css",
+              "RelativeDocumentMoniker": "OnlineLearningPortal\\Content\\Styles\\LogUserNavbar.css",
+              "ToolTip": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Content\\Styles\\LogUserNavbar.css",
+              "RelativeToolTip": "OnlineLearningPortal\\Content\\Styles\\LogUserNavbar.css",
+              "ViewState": "AQIAAGQAAAAAAAAAAAAAAHIAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-09-19T13:19:44.953Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HomePage.css",
+              "DocumentMoniker": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Content\\Styles\\HomePage.css",
+              "RelativeDocumentMoniker": "OnlineLearningPortal\\Content\\Styles\\HomePage.css",
+              "ToolTip": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Content\\Styles\\HomePage.css",
+              "RelativeToolTip": "OnlineLearningPortal\\Content\\Styles\\HomePage.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-09-19T13:19:18.997Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Footer.cshtml",
+              "DocumentMoniker": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Views\\Shared\\Footer.cshtml",
+              "RelativeDocumentMoniker": "OnlineLearningPortal\\Views\\Shared\\Footer.cshtml",
+              "ToolTip": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Views\\Shared\\Footer.cshtml",
+              "RelativeToolTip": "OnlineLearningPortal\\Views\\Shared\\Footer.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-19T13:15:10.291Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LogUserLayout.cshtml",
+              "DocumentMoniker": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Views\\Shared\\LogUserLayout.cshtml",
+              "RelativeDocumentMoniker": "OnlineLearningPortal\\Views\\Shared\\LogUserLayout.cshtml",
+              "ToolTip": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Views\\Shared\\LogUserLayout.cshtml",
+              "RelativeToolTip": "OnlineLearningPortal\\Views\\Shared\\LogUserLayout.cshtml",
+              "ViewState": "AQIAAEcAAAAAAAAAAAAAAFEAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-19T13:11:05.641Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserLayout.cshtml",
+              "DocumentMoniker": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Views\\Shared\\UserLayout.cshtml",
+              "RelativeDocumentMoniker": "OnlineLearningPortal\\Views\\Shared\\UserLayout.cshtml",
+              "ToolTip": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Views\\Shared\\UserLayout.cshtml",
+              "RelativeToolTip": "OnlineLearningPortal\\Views\\Shared\\UserLayout.cshtml",
+              "ViewState": "AQIAADgAAAAAAAAAAAAIwE4AAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-19T13:10:01.171Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "HomePage.cshtml",
+              "DocumentMoniker": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Views\\Home\\HomePage.cshtml",
+              "RelativeDocumentMoniker": "OnlineLearningPortal\\Views\\Home\\HomePage.cshtml",
+              "ToolTip": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Views\\Home\\HomePage.cshtml",
+              "RelativeToolTip": "OnlineLearningPortal\\Views\\Home\\HomePage.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-19T13:09:47.107Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "footer.html",
+              "DocumentMoniker": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Views\\Home\\footer.html",
+              "RelativeDocumentMoniker": "OnlineLearningPortal\\Views\\Home\\footer.html",
+              "ToolTip": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Views\\Home\\footer.html",
+              "RelativeToolTip": "OnlineLearningPortal\\Views\\Home\\footer.html",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-09-19T13:09:11.988Z",
+              "EditorCaption": ""
+            },
+            {
               "$type": "Bookmark",
               "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "UserNavbar.css",
               "DocumentMoniker": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Content\\Styles\\UserNavbar.css",
               "RelativeDocumentMoniker": "OnlineLearningPortal\\Content\\Styles\\UserNavbar.css",
               "ToolTip": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Content\\Styles\\UserNavbar.css",
               "RelativeToolTip": "OnlineLearningPortal\\Content\\Styles\\UserNavbar.css",
-              "ViewState": "AQIAAIQAAAAAAAAAAAAAAAYAAAAlAAAA",
+              "ViewState": "AQIAAJYAAAAAAAAAAAAAAJcAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-09-19T12:29:05.631Z"
+              "WhenOpened": "2024-09-19T12:29:05.631Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 15,
               "Title": "Register.css",
               "DocumentMoniker": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Content\\Styles\\Register.css",
               "RelativeDocumentMoniker": "OnlineLearningPortal\\Content\\Styles\\Register.css",
               "ToolTip": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Content\\Styles\\Register.css",
               "RelativeToolTip": "OnlineLearningPortal\\Content\\Styles\\Register.css",
-              "ViewState": "AQIAAHoAAAAAAAAAAAAAAIsAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2024-09-19T12:28:17.076Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 21,
               "Title": "login.css",
               "DocumentMoniker": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Content\\Styles\\login.css",
               "RelativeDocumentMoniker": "OnlineLearningPortal\\Content\\Styles\\login.css",
@@ -257,7 +379,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 22,
               "Title": "CourseEdit.css",
               "DocumentMoniker": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Content\\Styles\\CourseEdit.css",
               "RelativeDocumentMoniker": "OnlineLearningPortal\\Content\\Styles\\CourseEdit.css",
@@ -269,7 +391,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 16,
               "Title": "Course.css",
               "DocumentMoniker": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Content\\Styles\\Course.css",
               "RelativeDocumentMoniker": "OnlineLearningPortal\\Content\\Styles\\Course.css",
@@ -277,12 +399,11 @@
               "RelativeToolTip": "OnlineLearningPortal\\Content\\Styles\\Course.css",
               "ViewState": "AQIAADwAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-09-19T12:25:50.847Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-19T12:25:50.847Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 17,
               "Title": "AllUsers.css",
               "DocumentMoniker": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Content\\Styles\\AllUsers.css",
               "RelativeDocumentMoniker": "OnlineLearningPortal\\Content\\Styles\\AllUsers.css",
@@ -294,7 +415,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 23,
               "Title": "Register.cshtml",
               "DocumentMoniker": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Views\\Home\\Register.cshtml",
               "RelativeDocumentMoniker": "OnlineLearningPortal\\Views\\Home\\Register.cshtml",
@@ -306,19 +427,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 10,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "OnlineLearningPortal\\Views\\Home\\Index.cshtml",
               "ToolTip": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "OnlineLearningPortal\\Views\\Home\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEIAAAAeAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-19T10:08:50.244Z"
+              "WhenOpened": "2024-09-19T10:08:50.244Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 27,
               "Title": "AddCourse.cshtml",
               "DocumentMoniker": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Views\\Admin\\AddCourse.cshtml",
               "RelativeDocumentMoniker": "OnlineLearningPortal\\Views\\Admin\\AddCourse.cshtml",
@@ -330,7 +452,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 30,
               "Title": "Contact.cshtml",
               "DocumentMoniker": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Views\\Home\\Contact.cshtml",
               "RelativeDocumentMoniker": "OnlineLearningPortal\\Views\\Home\\Contact.cshtml",
@@ -342,7 +464,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 8,
               "Title": "AdminLayout.cshtml",
               "DocumentMoniker": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Views\\Shared\\AdminLayout.cshtml",
               "RelativeDocumentMoniker": "OnlineLearningPortal\\Views\\Shared\\AdminLayout.cshtml",
@@ -350,11 +472,12 @@
               "RelativeToolTip": "OnlineLearningPortal\\Views\\Shared\\AdminLayout.cshtml",
               "ViewState": "AQIAAB4AAAAAAAAAAAAAAC0AAACIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-19T06:57:36.51Z"
+              "WhenOpened": "2024-09-19T06:57:36.51Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 24,
               "Title": "AllPayments.cshtml",
               "DocumentMoniker": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Views\\Admin\\AllPayments.cshtml",
               "RelativeDocumentMoniker": "OnlineLearningPortal\\Views\\Admin\\AllPayments.cshtml",
@@ -366,7 +489,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 33,
               "Title": "PaidCourseView.cshtml",
               "DocumentMoniker": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Views\\User\\PaidCourseView.cshtml",
               "RelativeDocumentMoniker": "OnlineLearningPortal\\Views\\User\\PaidCourseView.cshtml",
@@ -378,7 +501,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 20,
               "Title": "PaymentPage.css",
               "DocumentMoniker": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Content\\Styles\\PaymentPage.css",
               "RelativeDocumentMoniker": "OnlineLearningPortal\\Content\\Styles\\PaymentPage.css",
@@ -390,7 +513,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 25,
               "Title": "PaymentPage.cshtml",
               "DocumentMoniker": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Views\\User\\PaymentPage.cshtml",
               "RelativeDocumentMoniker": "OnlineLearningPortal\\Views\\User\\PaymentPage.cshtml",
@@ -402,7 +525,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 26,
               "Title": "PaymentModel.cs",
               "DocumentMoniker": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Models\\PaymentModel.cs",
               "RelativeDocumentMoniker": "OnlineLearningPortal\\Models\\PaymentModel.cs",
@@ -414,19 +537,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 12,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "OnlineLearningPortal\\Controllers\\HomeController.cs",
               "ToolTip": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Controllers\\HomeController.cs",
               "RelativeToolTip": "OnlineLearningPortal\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAADsAAAAAAAAAAAAwwEQAAAAmAAAA",
+              "ViewState": "AQIAAIwAAAAAAAAAAADwv0QAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-18T13:45:33.395Z"
+              "WhenOpened": "2024-09-18T13:45:33.395Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 34,
               "Title": "VideoPlayView.cshtml",
               "DocumentMoniker": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Views\\User\\VideoPlayView.cshtml",
               "RelativeDocumentMoniker": "OnlineLearningPortal\\Views\\User\\VideoPlayView.cshtml",
@@ -438,7 +562,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 19,
               "Title": "UserDetailView.css",
               "DocumentMoniker": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Content\\Styles\\UserDetailView.css",
               "RelativeDocumentMoniker": "OnlineLearningPortal\\Content\\Styles\\UserDetailView.css",
@@ -450,7 +574,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 36,
               "Title": "UserCoursesModel.cs",
               "DocumentMoniker": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Models\\UserCoursesModel.cs",
               "RelativeDocumentMoniker": "OnlineLearningPortal\\Models\\UserCoursesModel.cs",
@@ -468,13 +592,14 @@
               "RelativeDocumentMoniker": "OnlineLearningPortal\\Repository\\CourseRepository.cs",
               "ToolTip": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Repository\\CourseRepository.cs",
               "RelativeToolTip": "OnlineLearningPortal\\Repository\\CourseRepository.cs",
-              "ViewState": "AQIAAMEAAAAAAAAAAAAtwM8AAAATAAAA",
+              "ViewState": "AQIAAO8CAAAAAAAAAAAswJQBAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-18T09:37:24.13Z"
+              "WhenOpened": "2024-09-18T09:37:24.13Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 32,
               "Title": "PendingCourse.cs",
               "DocumentMoniker": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Models\\PendingCourse.cs",
               "RelativeDocumentMoniker": "OnlineLearningPortal\\Models\\PendingCourse.cs",
@@ -486,19 +611,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 6,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Views\\User\\Index.cshtml",
               "RelativeDocumentMoniker": "OnlineLearningPortal\\Views\\User\\Index.cshtml",
               "ToolTip": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Views\\User\\Index.cshtml",
               "RelativeToolTip": "OnlineLearningPortal\\Views\\User\\Index.cshtml",
-              "ViewState": "AQIAAAQAAAAAAAAAAAAYwB0AAABUAAAA",
+              "ViewState": "AQIAABMAAAAAAAAAAAAYwCcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-18T05:32:53.596Z"
+              "WhenOpened": "2024-09-18T05:32:53.596Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 37,
               "Title": "About.cshtml",
               "DocumentMoniker": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Views\\Home\\About.cshtml",
               "RelativeDocumentMoniker": "OnlineLearningPortal\\Views\\Home\\About.cshtml",
@@ -510,7 +636,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 18,
               "Title": "About.css",
               "DocumentMoniker": "C:\\Users\\admin\\Desktop\\OnlineLearningPortal\\OnlineLearningPortal\\OnlineLearningPortal\\Content\\Styles\\About.css",
               "RelativeDocumentMoniker": "OnlineLearningPortal\\Content\\Styles\\About.css",

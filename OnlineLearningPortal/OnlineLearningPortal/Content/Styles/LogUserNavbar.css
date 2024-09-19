@@ -41,3 +41,76 @@
 .menuItem:hover {
     background-color: #b9acac;
 }
+.footerSection {
+    padding: 15px 0;
+    background-color: #e3d3d3;
+    font-family: Arial, sans-serif;
+}
+
+.footerContainer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: #e3d3d3;
+}
+
+    .footerContainer > div {
+        flex: 1;
+        margin: 10px;
+        
+    }
+
+.quickAccessBox h3,
+.footercontactbox h3,
+.socialIconBox h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.quickAccessBox ul {
+    list-style: none;
+    padding: 0;
+}
+
+    .quickAccessBox ul li {
+        margin: 5px 0;
+    }
+
+        .quickAccessBox ul li a {
+            text-decoration: none;
+            color: #000;
+        }
+
+.footercontactbox h2 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+
+.footerlocation i {
+    margin-right: 10px;
+}
+
+.footercontactbox p,
+.footerlocation span {
+    margin: 5px 0;
+}
+
+.socialIcons a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+}
+
+    .socialIcons a:hover {
+        color: #007bff;
+    }
+
+.footerSection {
+    text-align: center;
+    font-size: 14px;
+}
+.rights {
+    background-color: #e3d3d3;
+}
